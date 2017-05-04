@@ -14,6 +14,7 @@
     "redux": "^3.6.0",
     "redux-offline": "^2.0.0",
     "redux-promise": "^0.5.3",
+    "styled-components": "^1.4.6",
     "uuid": "^3.0.1"
   },
   "scripts": {
