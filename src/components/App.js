@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Home from './Home';
-import Header from './Header';
+import TopNav from './TopNav';
+import BottomNav from './BottomNav';
 // import logo from '../logo.svg';
 import './App.css';
 
@@ -11,9 +12,10 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Header />
-          <Route path="/" component={Home}/>
+          <TopNav />
+          <Route path="/" component={Home} />
           {/* <Route path="/library" component={Library}/> */}
+          <BottomNav />
         </div>
       </Router>
     );
