@@ -1,7 +1,14 @@
 import React from 'react';
 
-const Home = () => (
-  <h1>Hello worlds</h1>
-);
+import BookGrid from './BookGrid';
+
+function Home() {
+  return (
+    <div>
+      <h1>Books</h1>
+      <BookGrid />
+    </div>
+  );
+}
 
 export default Home;
