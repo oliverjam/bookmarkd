@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './Home';
 import TopNav from './TopNav';
 import BottomNav from './BottomNav';
-// import logo from '../logo.svg';
+import Reader from './Reader';
 import './App.css';
 
 // const mapStateToProps = state => ({
@@ -23,8 +23,13 @@ class App extends Component {
       <Router>
         <div>
           <TopNav />
-          <Route path="/" component={Home} />
-          {/* <Route path="/library" component={Library}/> */}
+          <Route exact path="/" component={Home} />
+          <Route
+            path="/reader/:slug"
+            render={({ match }) => {
+              return <Reader slug={match.params.slug} />;
+            }}
+          />
           <BottomNav />
         </div>
       </Router>
