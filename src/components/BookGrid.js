@@ -1,33 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { connect } from 'react-redux';
 import Grid from './utilities/Grid';
 import Book from './Book';
 
-const books = [
-  {
-    title: 'Moby Dicks',
-    author: 'The Dick guy',
-    url: 'https://fakeurl.com/mobydick.epub',
-  },
-  {
-    title: 'Another one',
-    author: 'The other guy',
-    url: 'https://fakeurl.com/other-one.epub',
-  },
-  {
-    title: 'Third one',
-    author: 'The third guy',
-    url: 'https://fakeurl.com/third.epub',
-  },
-];
+const mapStateToProps = state => ({
+  books: state.books,
+});
 
-function BookGrid() {
+function BookGrid(props) {
   return (
     <Grid>
-      {books.map(book => <li><Book details={book} /></li>)}
+      {props.books.map(book => <li><Book details={book} /></li>)}
     </Grid>
   );
 }
 
-export default BookGrid;
+export default connect(mapStateToProps)(BookGrid);
