@@ -22,3 +22,9 @@ export const addBook = (book, slug) => ({
   type: ADD_BOOK,
   book,
 });
+
+export const updateCurrentLocation = ({ slug, location }) => ({
+  type: UPDATE_CURRENT_LOCATION,
+  location,
+  slug,
+});

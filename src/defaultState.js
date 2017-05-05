@@ -20,13 +20,8 @@ const defaultState = {
     },
   ],
   theme: 'light',
-  guestUser: {
-    books: [
-      {
-        title: '',
-        location: '',
-      },
-    ],
+  user: {
+    books: [],
   },
 };
 

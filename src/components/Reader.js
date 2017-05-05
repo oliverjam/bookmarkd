@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { ReactReader } from 'react-reader';
 import styled from 'styled-components';
+
+import { addBook, updateCurrentLocation } from '../actions';
 
 const ReaderContainer = styled.div`
   height: 100vh;
@@ -10,20 +13,44 @@ const ReaderContainer = styled.div`
 `;
 
 class Reader extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  state = {
+    location: '',
+  };
+
+  componentDidMount() {
+    this.props.addBook({
+      slug: this.props.slug,
+    });
+  }
+
+  componentWillReceiveProps() {
+    const currentLocation = (this.props.user.books.find(
+      book => book.slug === this.props.slug
+    ) || {}).location;
+
+    this.setState({
+      // location: currentLocation,
+      location: 'epubcfi(/6/10[chapter_002]!/4/2/16/1:120)',
+    });
+    // console.log(currentLocation);
+  }
+
   onLocationChange = location => {
-    console.log(location);
+    // console.log(location);
+    this.props.updateCurrentLocation({ slug: this.props.slug, location });
   };
 
   render() {
+    const loc = 'epubcfi(/6/10[chapter_002]!/4/2/16/1:120)';
+    console.log(this.state.location === loc);
     return (
       <ReaderContainer>
         <ReactReader
           url={`https://s3-eu-west-1.amazonaws.com/react-reader/${this.props.slug}.epub`}
           title={'Alice in wonderland'}
-          location={'epubcfi(/6/2[cover]!/6)'} // TODO figure out serving first page
+          // location={'epubcfi(/6/2[cover]!/6)'} // TODO figure out serving first page
+          location={this.state.location} // TODO figure out serving first page
+          // location={loc} // TODO figure out serving first page
           locationChanged={this.onLocationChange}
         />
       </ReaderContainer>
@@ -31,8 +58,12 @@ class Reader extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {};
-}
+const mapStateToProps = state => ({
+  user: state.user,
+});
 
-export default connect(mapStateToProps)(Reader);
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ addBook, updateCurrentLocation }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Reader);
