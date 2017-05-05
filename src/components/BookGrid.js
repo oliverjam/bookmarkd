@@ -1,33 +1,20 @@
 import React from 'react';
-import uuid from 'uuid/v4';
-
+import styled from 'styled-components';
+import { connect } from 'react-redux';
 import Grid from './utilities/Grid';
 import Book from './Book';
+import uuid from 'uuid/v4';
 
-const books = [
-  {
-    title: 'Alice in Wonderland',
-    author: 'Alice Guy',
-    slug: 'alice',
-  },
-  {
-    title: 'Another one',
-    author: 'The other guy',
-    slug: 'another',
-  },
-  {
-    title: 'Third one',
-    author: 'The third guy',
-    slug: 'third',
-  },
-];
+const mapStateToProps = state => ({
+  books: state.books,
+});
 
-function BookGrid() {
+function BookGrid(props) {
   return (
     <Grid>
-      {books.map(book => <li key={uuid()}><Book details={book} /></li>)}
+      {props.books.map(book => <li key={uuid()}><Book details={book} /></li>)}
     </Grid>
   );
 }
 
-export default BookGrid;
+export default connect(mapStateToProps)(BookGrid);
