@@ -1,5 +1,5 @@
 import { CHANGE_THEME } from '../constants/index';
-import { ADD_BOOK /*UPDATE_CURRENT_LOCATION*/ } from '../constants/index';
+import { ADD_BOOK, UPDATE_CURRENT_LOCATION } from '../constants/index';
 
 export const changeTheme = theme => ({
   type: CHANGE_THEME,
@@ -9,4 +9,10 @@ export const changeTheme = theme => ({
 export const addBook = book => ({
   type: ADD_BOOK,
   book,
+});
+
+export const updateCurrentLocation = ({ slug, location }) => ({
+  type: UPDATE_CURRENT_LOCATION,
+  location,
+  slug,
 });

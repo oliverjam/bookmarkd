@@ -7,12 +7,7 @@ const defaultState = {
   // ],
   theme: 'light',
   user: {
-    books: [
-      {
-        slug: '',
-        location: '',
-      },
-    ],
+    books: [],
   },
 };
 

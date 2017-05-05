@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { ReactReader } from 'react-reader';
 import styled from 'styled-components';
 
-import { addBook } from '../actions';
+import { addBook, updateCurrentLocation } from '../actions';
 
 const ReaderContainer = styled.div`
   height: 100vh;
@@ -14,7 +14,7 @@ const ReaderContainer = styled.div`
 
 class Reader extends Component {
   componentDidMount() {
-    console.log(this.props);
+    // console.log(this.props);
     this.props.addBook({
       slug: this.props.slug,
       // location:
@@ -22,7 +22,8 @@ class Reader extends Component {
   }
 
   onLocationChange = location => {
-    console.log(location);
+    // console.log(location);
+    this.props.updateCurrentLocation({ slug: this.props.slug, location });
   };
 
   render() {
@@ -44,7 +45,7 @@ class Reader extends Component {
 // }
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ addBook }, dispatch);
+  return bindActionCreators({ addBook, updateCurrentLocation }, dispatch);
 };
 
 export default connect(null, mapDispatchToProps)(Reader);
