@@ -3,9 +3,17 @@ import { ADD_BOOK, UPDATE_CURRENT_LOCATION } from '../constants';
 export const userReducer = (state = {}, action) => {
   switch (action.type) {
     case ADD_BOOK:
+      const bookIndex = state.books.findIndex(book => {
+        return action.slug === 'alice';
+      });
+
+      if (bookIndex >= 0) {
+        return state;
+      }
+
       return {
         ...state,
-        books: [...state.books, action.book],
+        books: [...state.books, { slug: action.slug }],
       };
     case UPDATE_CURRENT_LOCATION:
       const updatedBooks = state.books.map(book => {

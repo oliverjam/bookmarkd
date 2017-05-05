@@ -18,13 +18,13 @@ export const fetchBook = (url, id) => {
   };
 };
 
-export const addBook = (book, slug) => ({
+export const addBook = ({ slug }) => ({
   type: ADD_BOOK,
-  book,
+  slug,
 });
 
 export const updateCurrentLocation = ({ slug, location }) => ({
   type: UPDATE_CURRENT_LOCATION,
-  location,
   slug,
+  location,
 });
