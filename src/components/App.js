@@ -7,6 +7,16 @@ import BottomNav from './BottomNav';
 import Reader from './Reader';
 import './App.css';
 
+// const mapStateToProps = state => ({
+//   books: state.books,
+//   theme: state.theme,
+// });
+//
+// const mapDispatchToProps = dispatch =>
+//   bindActionCreators(actionCreators, dispatch);
+//
+// const App = connect(mapStateToProps, mapDispatchToProps)(Main);
+
 class App extends Component {
   render() {
     return (
