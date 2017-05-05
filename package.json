@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "npm-run-all": "^4.0.2",
     "react-scripts": "0.9.5",
     "sw-precache": "^5.1.1"
   },
@@ -22,6 +23,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build && sw-precache --config=sw-precache-config.js",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "rename": "mv build/index.html build/200.html",
+    "surge": "surge ./build --domain bookmarkd-app.surge.sh",
+    "deploy": "run-s build rename surge"
   }
 }
