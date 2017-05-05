@@ -5,7 +5,6 @@ import Home from './Home';
 import TopNav from './TopNav';
 import BottomNav from './BottomNav';
 import Reader from './Reader';
-import './App.css';
 
 // const mapStateToProps = state => ({
 //   books: state.books,
