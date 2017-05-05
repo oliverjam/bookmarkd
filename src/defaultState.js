@@ -3,19 +3,19 @@ const defaultState = {
     {
       title: 'Moby Dicks',
       author: 'The Dick guy',
-      url: 'https://s3-eu-west-1.amazonaws.com/react-reader/alice.epub',
+      slug: 'alice',
       id: 1,
     },
     {
       title: 'Another one',
       author: 'The other guy',
-      url: 'https://s3-eu-west-1.amazonaws.com/react-reader/alice.epub',
+      slug: 'alice',
       id: 2,
     },
     {
       title: 'Third one',
       author: 'The third guy',
-      url: 'https://s3-eu-west-1.amazonaws.com/react-reader/alice.epub',
+      slug: 'alice',
       id: 3,
     },
   ],
