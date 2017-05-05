@@ -6,6 +6,14 @@ const defaultState = {
   //   },
   // ],
   theme: 'light',
+  guestUser: {
+    books: [
+      {
+        title: '',
+        location: '',
+      },
+    ],
+  },
 };
 
 export default defaultState;
