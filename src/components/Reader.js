@@ -14,10 +14,6 @@ const ReaderContainer = styled.div`
 
 // location={'epubcfi(/6/2[cover]!/6)'} // TODO figure out serving first page
 class Reader extends Component {
-  // state = {
-  //   location: '',
-  // };
-
   componentDidMount() {
     this.props.addBook({
       location: 'epubcfi(/6/10[chapter_002]!/4/2/16/1:120)',
@@ -37,23 +33,22 @@ class Reader extends Component {
   // }
 
   onLocationChange = location => {
-    console.log('location change', location);
-    this.forceUpdate();
+    // console.log('location change', location);
     // this.props.updateCurrentLocation({ slug: this.props.slug, location });
   };
 
   render() {
-    const { books } = this.props.user;
-    const home = 'epubcfi(/6/2[cover]!/6)';
-    const location = books[0] && books[0].location ? books[0].location : home;
-    console.log('location', location);
+    // const { books } = this.props.user;
+    // const home = 'epubcfi(/6/2[cover]!/6)';
+    // const location = books[0] && books[0].location ? books[0].location : home;
+    // console.log('location', location);
     return (
       <ReaderContainer>
         <ReactReader
           url={`https://s3-eu-west-1.amazonaws.com/react-reader/${this.props.slug}.epub`}
           title={'Alice in wonderland'}
-          // location={'epubcfi(/6/10[chapter_002]!/4/2/16/1:120)'} // TODO figure out serving first page
-          location={location}
+          location={'epubcfi(/6/2[cover]!/6)'} // TODO figure out serving first page
+          // location={location}
           locationChanged={this.onLocationChange}
         />
       </ReaderContainer>
