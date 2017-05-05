@@ -1,7 +1,6 @@
 import { ADD_BOOK, UPDATE_CURRENT_LOCATION } from '../constants';
 
 export const userReducer = (state = {}, action) => {
-  // console.log('state in userReducer', state);
   switch (action.type) {
     case ADD_BOOK:
       return {
