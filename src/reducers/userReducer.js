@@ -9,7 +9,6 @@ export const userReducer = (state = {}, action) => {
         books: [...state.books, action.book],
       };
     case UPDATE_CURRENT_LOCATION:
-      console.log('action', action);
       const updatedBooks = state.books.map(book => {
         if (book.slug === action.slug) {
           book.location = action.location;
