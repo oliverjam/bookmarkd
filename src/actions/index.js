@@ -1,4 +1,4 @@
-import { CHANGE_THEME, CACHE_BOOK } from '../constants/index';
+import { CHANGE_THEME, CACHE_BOOK, ADD_BOOK, UPDATE_CURRENT_LOCATION } from '../constants/index';
 
 export const changeTheme = theme => ({
   type: CHANGE_THEME,
@@ -12,3 +12,9 @@ export const fetchBook = (url, id) => {
     id,
   };
 };
+
+export const addBook = slug => ({
+  type: ADD_BOOK,
+  book,
+});
+
