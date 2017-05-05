@@ -6,10 +6,10 @@ const defaultState = {
   //   },
   // ],
   theme: 'light',
-  guestUser: {
+  user: {
     books: [
       {
-        title: '',
+        slug: '',
         location: '',
       },
     ],

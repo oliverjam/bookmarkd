@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { ReactReader } from 'react-reader';
 import styled from 'styled-components';
+
+import { addBook } from '../actions';
 
 const ReaderContainer = styled.div`
   height: 100vh;
@@ -10,9 +13,14 @@ const ReaderContainer = styled.div`
 `;
 
 class Reader extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  componentDidMount() {
+    console.log(this.props);
+    this.props.addBook({
+      slug: this.props.slug,
+      // location:
+    });
+  }
+
   onLocationChange = location => {
     console.log(location);
   };
@@ -30,9 +38,13 @@ class Reader extends Component {
     );
   }
 }
+//
+// const mapStateToProps => state {
+//   user:
+// }
 
-function mapStateToProps(state) {
-  return {};
-}
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ addBook }, dispatch);
+};
 
-export default connect(mapStateToProps)(Reader);
+export default connect(null, mapDispatchToProps)(Reader);
