@@ -1,13 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+// import styled from 'styled-components';
 
 import Card from './utilities/Card';
 
 function Book({ details }) {
-  const { title, author } = details;
+  const { title, author, slug } = details;
   return (
     <Card>
-      <h2>{title}</h2>
+      <Link to={`/reader/${slug}`}><h2>{title}</h2></Link>
       <footer><cite>{author}</cite></footer>
     </Card>
   );
