@@ -19,12 +19,13 @@
     "redux": "^3.6.0",
     "redux-offline": "^2.0.0",
     "redux-promise": "^0.5.3",
+    "redux-promise-middleware": "^4.2.0",
     "styled-components": "^1.4.6",
     "uuid": "^3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && sw-precache --config=sw-precache-config.js",
+    "build": "react-scripts build && sw-precache  --config=sw-precache-config.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "rename": "mv build/index.html build/200.html",

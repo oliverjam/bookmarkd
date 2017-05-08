@@ -1,20 +1,12 @@
 import { CACHE_BOOK } from '../constants/index';
 
-export const fetchBook = (state = [], action) => {
+export const bookReducer = (state = [], action) => {
   switch (action.type) {
     case CACHE_BOOK:
-      //get the Book
-      const saved =
-        caches
-          .keys()
-          .then(res => res[0])
-          .then(myCache =>
-            caches.open(myCache).then(cache => cache.add(action.url))
-          ) || true;
-      console.log('I am working ', action.id, action.url);
-      return [...state]; //add prop to tell user book saved
-      break;
-
+      return state.map(book => {
+        if (book.id !== action.id) return book;
+        return { ...book, saved: action.payload };
+      });
     default:
       return state;
   }
