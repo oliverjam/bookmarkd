@@ -33,10 +33,10 @@
     navigator.serviceWorker
       .register('./service-worker.js')
       .then(() => {
-        console.log('yay');
+        console.log('Service worker registered!');
       })
       .catch(err => {
-        console.log('boo', err);
+        console.log('Service worker registration failed with error: ', err);
       });
   });
 }
