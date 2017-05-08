@@ -28,18 +28,11 @@
       To create a production bundle, use `npm run build`.
     -->
     <script>
-//     if ('serviceWorker' in navigator) {
-//   window.addEventListener('load', function() {
-//     navigator.serviceWorker
-//       .register('./service-worker.js')
-//       .then(() => {
-//         console.log('Service worker registered!');
-//       })
-//       .catch(err => {
-//         console.log('Service worker registration failed with error: ', err);
-//       });
-//   });
-// }
+    if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js');
+  });
+}
 </script>
   </body>
 </html>
