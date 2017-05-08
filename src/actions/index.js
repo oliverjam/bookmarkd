@@ -10,11 +10,15 @@ export const changeTheme = theme => ({
   theme,
 });
 
-export const fetchBook = (url, id) => {
+export const fetchBook = async (url, id) => {
+  const saved = await fetch(url).then(
+    res => (res.status === 200 ? true : false),
+  );
+  console.log('I am working ', id, url);
   return {
     type: CACHE_BOOK,
-    url,
     id,
+    payload: saved,
   };
 };
 
