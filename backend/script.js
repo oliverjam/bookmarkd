@@ -4,16 +4,16 @@ const xmlParser = require('xml2json');
 const uuid = require('uuid/v4');
 const stdio = require('stdio');
 
-let dir = '.';
-stdio.question('Enter path of directory you want to read', (err, res) => {
+stdio.question('Enter path of directory you want to read', (err, directory) => {
   if (err) throw err;
-  makeBookArr(res);
+  stdio.question('Enter the path for result', (error, filePath) => {
+    if (error) throw error;
+    makeBookArr(directory, filePath);
+  });
 });
 
-function makeBookArr(dir) {
+function makeBookArr(dir, filePath = './book-array.js') {
   const bookArr = fs.readdirSync(dir);
-
-  let count = 0;
 
   const bookInfo = [];
 
@@ -21,23 +21,31 @@ function makeBookArr(dir) {
     const stream = fs.createReadStream(`${dir}/${book}`);
     stream.pipe(unzipper.Parse()).on('entry', function(entry) {
       var fileName = entry.path;
-      if (fileName === 'OEBPS/content.opf') {
+      if (fileName.endsWith('content.opf')) {
         let data = '';
-        entry.on('data', chunk => (data += chunk)).on('end', () => {
-          const bookJson = JSON.parse(xmlParser.toJson(data));
-          const metadata = bookJson.package.metadata;
-          const returnObj = {
-            title: metadata['dc:title'],
-            author: metadata['dc:creator']['$t'],
-            slug: book.slice(0, book.length - 5),
-            id: uuid(),
-          };
-          count++;
-          bookInfo.push(returnObj);
-          if (count === bookArr.length) {
-            console.log(bookInfo);
-          }
-        });
+        entry
+          .on('data', chunk => (data += chunk))
+          .on('end', () => {
+            const bookJson = JSON.parse(xmlParser.toJson(data));
+            const metadata = bookJson.package.metadata;
+            const returnObj = {
+              title: metadata['dc:title'],
+              author: metadata['dc:creator']
+                ? metadata['dc:creator']['$t']
+                : 'unknown',
+              slug: book.slice(0, book.length - 5),
+              id: uuid(),
+            };
+            bookInfo.push(returnObj);
+
+            if (bookInfo.length === bookArr.length) {
+              fs.writeFile(filePath, JSON.stringify(bookInfo), err => {
+                if (err) throw err;
+                console.log(`Your array has been written to ${filePath}!`);
+              });
+            }
+          })
+          .on('error', err => console.log(err));
       } else {
         entry.autodrain();
       }
