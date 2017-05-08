@@ -1,22 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import SearchResults from './../components/SearchResults';
 
-import Nav from './utilities/Nav';
-
-const TopNavigation = styled(Nav)`
-  color: blue;
-`;
-
-class TopNav extends Component {
+class Search extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       value: '',
-      searchResults: [],
     };
   }
   handleChange = event => {
@@ -30,29 +20,25 @@ class TopNav extends Component {
         book.title.toLowerCase().includes(searchTerm)
       );
     });
-    this.setState({
-      searchResults,
-    });
   };
 
   render() {
     return (
-      <TopNavigation>
-        <Link to="/">Bookmarkd</Link>
+      <div>
         <input
           value={this.state.value}
           onChange={this.handleChange}
           placeholder="search here"
-        />
-        {this.state.searchResults.length > 0 &&
-          <SearchResults books={this.state.searchResults} />}
-      </TopNavigation>
+      />
+      </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  books: state.books,
-});
+function mapStateToProps(state) {
+  return {
+    books: state.books,
+  };
+}
 
-export default connect(mapStateToProps)(TopNav);
+export default connect(mapStateToProps)(Search);
