@@ -5,7 +5,10 @@
   "devDependencies": {
     "npm-run-all": "^4.0.2",
     "react-scripts": "0.9.5",
-    "sw-precache": "^5.1.1"
+    "stdio": "^0.2.7",
+    "sw-precache": "^5.1.1",
+    "unzipper": "^0.8.8",
+    "xml2json": "^0.11.0"
   },
   "dependencies": {
     "react": "^15.5.4",
