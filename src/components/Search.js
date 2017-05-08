@@ -24,11 +24,13 @@ class Search extends Component {
 
   render() {
     return (
-      <input
-        value={this.state.value}
-        onChange={this.handleChange}
-        placeholder="search here"
+      <div>
+        <input
+          value={this.state.value}
+          onChange={this.handleChange}
+          placeholder="search here"
       />
+      </div>
     );
   }
 }
