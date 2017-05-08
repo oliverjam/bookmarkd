@@ -1,4 +1,8 @@
 const defaultState = {
+  theme: 'light',
+  user: {
+    books: [],
+  },
   books: [
     {
       title: 'A Modest Proposal / For preventing the children of poor people in Ireland, from being a burden on their parents or country, and for making them beneficial to the publick',
@@ -547,10 +551,6 @@ const defaultState = {
       id: '4f93b659-d62c-4e0e-a284-307937f25f51',
     },
   ],
-  theme: 'light',
-  user: {
-    books: [],
-  },
 };
 
 export default defaultState;
