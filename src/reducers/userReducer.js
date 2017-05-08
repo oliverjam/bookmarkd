@@ -3,11 +3,13 @@ import { ADD_BOOK, UPDATE_CURRENT_LOCATION } from '../constants';
 export const userReducer = (state = {}, action) => {
   switch (action.type) {
     case ADD_BOOK:
-      const bookIndex = state.books.findIndex(book => {
-        return action.slug === 'alice';
+      // check if book has already been opened so that
+      // we don't add to user's books
+      const wasBookAlreadyOpened = state.books.some(book => {
+        return book.slug === action.slug;
       });
 
-      if (bookIndex >= 0) {
+      if (wasBookAlreadyOpened) {
         return state;
       }
 

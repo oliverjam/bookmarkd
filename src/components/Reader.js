@@ -5,6 +5,7 @@ import { ReactReader } from 'react-reader';
 import styled from 'styled-components';
 
 import { addBook, updateCurrentLocation } from '../actions';
+import slugToTitle from './../lib/slugToTitle';
 
 const ReaderContainer = styled.div`
   height: 100vh;
@@ -25,13 +26,17 @@ class Reader extends Component {
 
   render() {
     const { books } = this.props.user;
-    const currentLocation = books[0] ? books[0].location : '';
+    const indexOfCurrentBook = books.findIndex(
+      book => book.slug === this.props.slug
+    );
+
+    const currentLocation = (books[indexOfCurrentBook] || {}).location;
 
     return (
       <ReaderContainer>
         <ReactReader
-          url={`https://s3-eu-west-1.amazonaws.com/react-reader/${this.props.slug}.epub`}
-          title={'Alice in wonderland'}
+          url={`https://s3.eu-west-2.amazonaws.com/all-the-epubs/${this.props.slug}.epub`}
+          title={slugToTitle(this.props.slug)}
           location={currentLocation}
           locationChanged={this.onLocationChange}
         />

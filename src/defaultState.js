@@ -1,21 +1,21 @@
 const defaultState = {
   books: [
     {
-      title: 'Moby Dicks',
-      author: 'The Dick guy',
-      slug: 'alice',
+      title: 'David Copperfield',
+      author: 'Alice author',
+      slug: 'david-copperfield',
       id: 1,
     },
     {
-      title: 'Another one',
-      author: 'The other guy',
-      slug: 'alice',
+      title: 'Peter Pan',
+      author: 'Peter author',
+      slug: 'peter-pan',
       id: 2,
     },
     {
-      title: 'Third one',
-      author: 'The third guy',
-      slug: 'alice',
+      title: 'Dracula',
+      author: 'Dracula',
+      slug: 'dracula',
       id: 3,
     },
   ],
