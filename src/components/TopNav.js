@@ -30,11 +30,11 @@ class TopNav extends Component {
         book.title.toLowerCase().includes(searchTerm)
       );
     });
-
     this.setState({
       searchResults,
     });
   };
+
   render() {
     return (
       <TopNavigation>
