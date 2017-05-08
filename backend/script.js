@@ -28,6 +28,17 @@ function makeBookArr(dir, filePath = './book-array.js') {
           .on('end', () => {
             const bookJson = JSON.parse(xmlParser.toJson(data));
             const metadata = bookJson.package.metadata;
+            if (metadata['dc:creator'] && !metadata['dc:creator']['$t']) {
+              metadata['dc:creator']['$t'] = metadata[
+                'dc:creator'
+              ].reduce((a, e, i) => {
+                let accumulate = a + e['$t'];
+                if (i !== metadata['dc:creator'].length - 1) {
+                  accumulate += ' & ';
+                }
+                return accumulate;
+              }, '');
+            }
             const returnObj = {
               title: metadata['dc:title'],
               author: metadata['dc:creator']
