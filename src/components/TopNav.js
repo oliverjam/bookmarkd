@@ -23,11 +23,18 @@ class TopNav extends Component {
     this.setState({
       value: event.target.value,
     });
+    // Return no results for an empty search
+    if (event.target.value === '') {
+      this.setState({ searchResults: [] });
+      return;
+    }
+    const searchTerm = event.target.value.toLowerCase() || '';
     const searchResults = this.props.books.filter(book => {
-      const searchTerm = this.state.value.toLowerCase();
+      const author = book.author || '';
+      const title = book.title || '';
       return (
-        book.author.toLowerCase().includes(searchTerm) ||
-        book.title.toLowerCase().includes(searchTerm)
+        author.toLowerCase().includes(searchTerm) ||
+        title.toLowerCase().includes(searchTerm)
       );
     });
     this.setState({
