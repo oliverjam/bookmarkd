@@ -11,7 +11,7 @@ import Reader from './Reader';
 import Snackbar from './Snackbar';
 
 const mapStateToProps = state => ({
-  message: state.message,
+  message: state.snackbarMessage,
 });
 
 const mapDispatchToProps = dispatch =>
@@ -30,7 +30,7 @@ class App extends Component {
               return <Reader slug={match.params.slug} />;
             }}
           />
-          <Snackbar />
+          {this.props.message && <Snackbar message={this.props.message} />}
           <BottomNav />
         </div>
       </Router>

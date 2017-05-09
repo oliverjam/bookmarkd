@@ -5,7 +5,7 @@ export const snackbarReducer = (state = {}, action) => {
     case SNACKBAR_MESSAGE:
       return {
         ...state,
-        message: action.message,
+        snackbarMessage: action.message,
       };
     default:
       return state;

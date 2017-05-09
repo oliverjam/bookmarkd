@@ -3,6 +3,7 @@ const defaultState = {
   user: {
     books: [],
   },
+  snackbarMessage: '',
   books: [
     {
       title: 'A Modest Proposal / For preventing the children of poor people in Ireland, from being a burden on their parents or country, and for making them beneficial to the publick',
