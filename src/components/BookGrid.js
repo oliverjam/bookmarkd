@@ -12,7 +12,9 @@ const mapStateToProps = state => ({
 function BookGrid(props) {
   return (
     <Grid>
-      {props.books.map(book => <li key={uuid()}><Book details={book} /></li>)}
+      {props.books
+        .map(book => <li key={uuid()}><Book details={book} /></li>)
+        .slice(0, 10)}
     </Grid>
   );
 }
