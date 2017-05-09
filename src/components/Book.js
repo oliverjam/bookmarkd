@@ -9,7 +9,7 @@ import Card from './utilities/Card';
 
 function Book(props) {
   const { title, author, id, slug } = props.details;
-  const url = `https://s3-eu-west-1.amazonaws.com/react-reader/${slug}.epub`;
+  const url = `https://s3-eu-west-1.amazonaws.com/all-the-epubs/${slug}.epub`;
   const cacheBook = () => props.fetchBook(url, id);
   return (
     <Card>

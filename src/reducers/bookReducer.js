@@ -1,6 +1,7 @@
 import { CACHE_BOOK } from '../constants/index';
 
 export const bookReducer = (state = [], action) => {
+  console.log(action);
   switch (action.type) {
     case CACHE_BOOK:
       return state.map(book => {
