@@ -12,7 +12,7 @@ export const changeTheme = theme => ({
 
 export const fetchBook = async (url, id) => {
   const saved = await fetch(url).then(
-    res => (res.status === 200 ? true : false),
+    res => (res.status === 200 ? true : false)
   );
   console.log('I am working ', id, url);
   return {

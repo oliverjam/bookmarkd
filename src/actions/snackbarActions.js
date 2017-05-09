@@ -1,24 +1,19 @@
-import { SNACKBAR_MESSAGE } from '../constants';
+import { SHOW_MESSAGE, HIDE_MESSAGE } from '../constants';
 
-const showSnackbar = (message, id) => ({
-  type: SNACKBAR_MESSAGE,
-  id,
+const showSnackbar = message => ({
+  type: SHOW_MESSAGE,
   message,
 });
 
-const hideSnackbar = id => ({
+const hideSnackbar = () => ({
   type: HIDE_MESSAGE,
   message: '',
-  id,
 });
 
-let nextNotificationId = 0;
-
-export function showSnackBarWithTimeout(message) {
+export function showSnackbarWithTimeout(message) {
   return function(dispatch) {
-    const id = nextNotificationId++;
-    dispatch(showSnackbar(message, id));
+    dispatch(showSnackbar(message));
 
-    setTimeout(() => dispatch(hideSnackbar(id)), 2000);
+    setTimeout(() => dispatch(hideSnackbar()), 2000);
   };
 }

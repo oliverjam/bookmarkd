@@ -1,12 +1,12 @@
-import { SNACKBAR_MESSAGE } from '../constants';
+import { SHOW_MESSAGE, HIDE_MESSAGE } from '../constants';
 
-export const snackbarReducer = (state = {}, action) => {
+export const snackbarReducer = (state = '', action) => {
   switch (action.type) {
-    case SNACKBAR_MESSAGE:
-      return {
-        ...state,
-        snackbarMessage: action.message,
-      };
+    case SHOW_MESSAGE:
+      return action.message;
+
+    case HIDE_MESSAGE:
+      return '';
     default:
       return state;
   }
