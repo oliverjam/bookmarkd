@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { snackbarMessage } from '../actions/snackbarActions';
+import { showSnackBarWithTimeout } from '../actions/snackbarActions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -11,11 +11,8 @@ import Reader from './Reader';
 import Snackbar from './Snackbar';
 
 const mapStateToProps = state => ({
-  message: state.snackbarMessage,
+  message: state.message,
 });
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ snackbarMessage }, dispatch);
 
 class App extends Component {
   render() {
@@ -38,4 +35,4 @@ class App extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, showSnackBarWithTimeout)(App);
