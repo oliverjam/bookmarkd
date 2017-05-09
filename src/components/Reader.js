@@ -21,6 +21,7 @@ class Reader extends Component {
   }
 
   onLocationChange = location => {
+    // console.log('change', location);
     this.props.updateCurrentLocation({ slug: this.props.slug, location });
   };
 
@@ -31,6 +32,7 @@ class Reader extends Component {
     );
 
     const currentLocation = (books[indexOfCurrentBook] || {}).location;
+    // console.log('render', currentLocation);
 
     return (
       <ReaderContainer>

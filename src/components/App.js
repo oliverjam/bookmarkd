@@ -6,16 +6,6 @@ import TopNav from './TopNav';
 import BottomNav from './BottomNav';
 import Reader from './Reader';
 
-// const mapStateToProps = state => ({
-//   books: state.books,
-//   theme: state.theme,
-// });
-//
-// const mapDispatchToProps = dispatch =>
-//   bindActionCreators(actionCreators, dispatch);
-//
-// const App = connect(mapStateToProps, mapDispatchToProps)(Main);
-
 class App extends Component {
   render() {
     return (
