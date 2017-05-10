@@ -25,3 +25,20 @@ export const SearchInput = styled.input`
 export const MenuButton = styled.button`
   padding: ${props => props.theme.spaceS} ${props => props.theme.spaceM};
 `;
+
+export const SearchList = styled.ul`
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: ${props => props.theme.spaceM};
+  background-color: ${props => props.theme.bgDark};
+  z-index: 10;
+`;
+
+export const SearchResult = styled.li`
+  padding: ${props => props.theme.spaceS};
+  &:not(:first-child) {
+    margin-top: ${props => props.theme.spaceM};
+  }
+`;
