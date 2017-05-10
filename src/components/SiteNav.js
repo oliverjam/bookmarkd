@@ -1,20 +1,20 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavAnchor } from 'react-router-dom';
 
-import { Nav, NavList, NavItem } from './base/Nav';
+import { Nav, NavList, NavItem, NavAnchor } from './base/Nav';
 
 function SiteNav() {
   return (
     <Nav>
       <NavList>
         <NavItem>
-          <NavLink exact to="/">Home</NavLink>
+          <NavAnchor exact to="/">Home</NavAnchor>
         </NavItem>
         <NavItem>
-          <NavLink to="/browse">Browse</NavLink>
+          <NavAnchor to="/browse">Browse</NavAnchor>
         </NavItem>
         <NavItem>
-          <NavLink to="/library">Library</NavLink>
+          <NavAnchor to="/library">Library</NavAnchor>
         </NavItem>
       </NavList>
     </Nav>
