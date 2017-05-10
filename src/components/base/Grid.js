@@ -7,7 +7,6 @@ const Grid = styled.ul`
   grid-template-columns: repeat(auto-fit, 12em);
   grid-gap: ${props => props.theme.spaceM};
   justify-content: center;
-  list-style-type: none;
 `;
 
 export default Grid;
