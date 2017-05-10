@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+// import { Link } from 'react-router-dom';
+// import styled from 'styled-components';
 
 import Header from './base/Header';
-import {
-  SearchBar,
-  SearchLabel,
-  SearchInput,
-  MenuButton,
-} from './base/SearchBar';
+import Search from './Search';
+import SiteNav from './SiteNav';
 import SearchResults from './../components/SearchResults';
 
 class PageHeader extends Component {
@@ -47,19 +43,8 @@ class PageHeader extends Component {
   render() {
     return (
       <Header>
-        <SearchBar>
-          <MenuButton>☰</MenuButton>
-          <SearchLabel for="search" class="searchbar__label u-vh">
-            Search for books
-          </SearchLabel>
-          <SearchInput
-            id="search"
-            value={this.state.value}
-            onChange={this.handleChange}
-            placeholder="Search for books"
-            required
-          />
-        </SearchBar>
+        <Search value={this.state.value} handleChange={this.handleChange} />
+        <SiteNav />
         {this.state.searchResults.length > 0 &&
           <SearchResults books={this.state.searchResults} />}
       </Header>
