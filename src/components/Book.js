@@ -5,7 +5,7 @@ import { fetchBook } from '../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
-import Card from './utilities/Card';
+import Card from './base/Card';
 
 function Book(props) {
   const { title, author, id, slug } = props.details;

@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import SearchResults from './../components/SearchResults';
 
-import Nav from './utilities/Nav';
+import Nav from './base/Nav';
 
 const TopNavigation = styled(Nav)`
-  color: blue;
 `;
 
 class TopNav extends Component {

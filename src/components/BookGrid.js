@@ -1,7 +1,7 @@
 import React from 'react';
 // import styled from 'styled-components';
 import { connect } from 'react-redux';
-import Grid from './utilities/Grid';
+import Grid from './base/Grid';
 import Book from './Book';
 import uuid from 'uuid/v4';
 

@@ -5,8 +5,9 @@ const Grid = styled.ul`
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, 12em);
-  grid-gap: 1em;
+  grid-gap: ${props => props.theme.spaceM};
   justify-content: center;
+  list-style-type: none;
 `;
 
 export default Grid;

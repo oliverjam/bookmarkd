@@ -11,7 +11,6 @@ import offlineConfig from 'redux-offline/lib/defaults';
 
 import rootReducer from './reducers';
 import App from './components/App';
-import './index.css';
 import defaultState from './defaultState.js';
 
 const enhancer = compose(
