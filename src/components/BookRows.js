@@ -9,9 +9,16 @@ const mapStateToProps = state => ({
   books: state.books,
 });
 
-const Row = styled.div`
+const Row = styled.ul`
   height: 25%;
   width: 100%;
+  display:flex;
+  overflow-x:scroll;
+  margin: ${props => props.theme.spaceM};
+`;
+
+const BookList = styled.li`
+  list-style-type: none;
 `;
 
 class BookRows extends Component {
@@ -31,10 +38,14 @@ class BookRows extends Component {
     return (
       <div>
         {Object.keys(myBooks).map(genre => (
-          <Row>
+          <div key={uuid()}>
             <h2>{genre}</h2>
-            {myBooks[genre].map(genredBook => <Book details={genredBook} />)}
-          </Row>
+            <Row>
+              {myBooks[genre].map(genredBook => (
+                <BookList key={uuid()}><Book details={genredBook} /></BookList>
+              ))}
+            </Row>
+          </div>
         ))}
       </div>
     );
