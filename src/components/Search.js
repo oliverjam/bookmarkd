@@ -6,11 +6,14 @@ import {
   SearchInput,
   MenuButton,
 } from './base/SearchBar';
+import IconMenu from './icons/IconMenu';
 
 function Search({ value, handleChange }) {
   return (
     <SearchBar>
-      <MenuButton>☰</MenuButton>
+      <MenuButton>
+        <IconMenu description="Open menu" width="24" height="24" />
+      </MenuButton>
       <SearchLabel for="search">
         Search for books
       </SearchLabel>

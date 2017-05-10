@@ -5,6 +5,7 @@ export const SearchBar = styled.div`
   width: 100%;
   max-width: 40em;
   display: flex;
+  font-size: 0.825em;
   color: ${props => props.theme.textDark};
   background-color: ${props => props.theme.bgLight};
   border-radius: 4px;
@@ -24,6 +25,8 @@ export const SearchInput = styled.input`
 
 export const MenuButton = styled.button`
   padding: ${props => props.theme.spaceS} ${props => props.theme.spaceM};
+  display: flex;
+  align-items: center;
 `;
 
 export const SearchList = styled.ul`
