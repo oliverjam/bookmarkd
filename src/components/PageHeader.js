@@ -5,8 +5,7 @@ import styled from 'styled-components';
 import SearchResults from './../components/SearchResults';
 
 import Header from './base/Header';
-
-// Header;
+import SearchBar from './base/SearchBar';
 
 class PageHeader extends Component {
   constructor(props) {
@@ -44,11 +43,13 @@ class PageHeader extends Component {
     return (
       <Header>
         <Link to="/">Bookmarkd</Link>
-        <input
-          value={this.state.value}
-          onChange={this.handleChange}
-          placeholder="search here"
-        />
+        <SearchBar>
+          <input
+            value={this.state.value}
+            onChange={this.handleChange}
+            placeholder="search here"
+          />
+        </SearchBar>
         {this.state.searchResults.length > 0 &&
           <SearchResults books={this.state.searchResults} />}
       </Header>
