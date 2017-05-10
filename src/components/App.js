@@ -20,6 +20,16 @@ injectGlobal`
     font-size: 112.5%;
   }
 
+  input,
+  button,
+  label,
+  textarea {
+    font-size: 100%;
+    color: inherit;
+    background: none;
+    border: none;
+  }
+
   body,
   ul,
   h1,
