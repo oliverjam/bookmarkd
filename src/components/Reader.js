@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { ReactReader } from 'react-reader';
 import styled from 'styled-components';
 
+import ReaderHeader from './ReaderHeader';
 import { addBook, updateCurrentLocation } from '../actions';
 import slugToTitle from './../lib/slugToTitle';
 
@@ -36,6 +37,7 @@ class Reader extends Component {
 
     return (
       <ReaderContainer>
+        <ReaderHeader />
         <ReactReader
           url={`https://s3.eu-west-2.amazonaws.com/all-the-epubs/${this.props.slug}.epub`}
           title={slugToTitle(this.props.slug)}

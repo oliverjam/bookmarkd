@@ -68,7 +68,6 @@ class App extends Component {
       <Router>
         <ThemeProvider theme={theme}>
           <div>
-            <PageHeader />
             <Route exact path="/" component={Home} />
             <Route path="/browse" component={Home} />
             <Route path="/library" component={Home} />
