@@ -16,8 +16,8 @@ import defaultState from './defaultState.js';
 const enhancer = compose(
   applyMiddleware(promiseMiddleware, thunk),
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ &&
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__(),
-  offline(offlineConfig)
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()
+  // offline(offlineConfig)
 );
 
 const store = createStore(rootReducer, defaultState, enhancer);

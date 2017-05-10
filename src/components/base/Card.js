@@ -1,10 +1,16 @@
 import styled from 'styled-components';
+import randomSvg from '../../lib/randomBackground';
 
 const Card = styled.article`
-  width: 100%;
-  padding: ${props => props.theme.spaceM};
-  background-color: ${props => props.theme.bgLight};
+  width: 10rem;
+  height: 15rem;
+  padding: ${props => props.theme.spaceS};
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  margin: ${props => props.theme.spaceS};
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export default Card;
