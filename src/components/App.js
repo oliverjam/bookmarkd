@@ -5,8 +5,8 @@ import { ThemeProvider, injectGlobal } from 'styled-components';
 import theme from '../theme';
 
 import Home from './Home';
-import TopNav from './TopNav';
-import BottomNav from './BottomNav';
+import PageHeader from './PageHeader';
+// import BottomNav from './BottomNav';
 import Reader from './Reader';
 import Snackbar from './Snackbar';
 
@@ -53,7 +53,7 @@ class App extends Component {
       <Router>
         <ThemeProvider theme={theme}>
           <div>
-            <TopNav />
+            <PageHeader />
             <Route exact path="/" component={Home} />
             <Route
               path="/reader/:slug"
@@ -64,7 +64,7 @@ class App extends Component {
 
             {this.props.message && <Snackbar message={this.props.message} />}
 
-            <BottomNav />
+            {/* <BottomNav /> */}
           </div>
         </ThemeProvider>
       </Router>

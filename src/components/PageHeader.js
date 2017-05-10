@@ -4,12 +4,11 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import SearchResults from './../components/SearchResults';
 
-import Nav from './base/Nav';
+import Header from './base/Header';
 
-const TopNavigation = styled(Nav)`
-`;
+// Header;
 
-class TopNav extends Component {
+class PageHeader extends Component {
   constructor(props) {
     super(props);
 
@@ -43,7 +42,7 @@ class TopNav extends Component {
 
   render() {
     return (
-      <TopNavigation>
+      <Header>
         <Link to="/">Bookmarkd</Link>
         <input
           value={this.state.value}
@@ -52,7 +51,7 @@ class TopNav extends Component {
         />
         {this.state.searchResults.length > 0 &&
           <SearchResults books={this.state.searchResults} />}
-      </TopNavigation>
+      </Header>
     );
   }
 }
@@ -61,4 +60,4 @@ const mapStateToProps = state => ({
   books: state.books,
 });
 
-export default connect(mapStateToProps)(TopNav);
+export default connect(mapStateToProps)(PageHeader);

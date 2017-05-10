@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
-const Nav = styled.header`
+const Header = styled.header`
+  width: 100%;
   display: flex;
+  align-items: center;
   color: ${props => props.theme.textLight};
   background-color: ${props => props.theme.primary};
-  width: 100%;
-  padding: 0.3rem 0;
+  padding: ${props => props.theme.spaceM};
 `;
 
-export default Nav;
+export default Header;
