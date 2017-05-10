@@ -1,44 +1,28 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 
-class Search extends Component {
-  constructor(props) {
-    super(props);
+import {
+  SearchBar,
+  SearchLabel,
+  SearchInput,
+  MenuButton,
+} from './base/SearchBar';
 
-    this.state = {
-      value: '',
-    };
-  }
-  handleChange = event => {
-    this.setState({
-      value: event.target.value,
-    });
-    const searchResults = this.props.books.filter(book => {
-      const searchTerm = this.state.value.toLowerCase();
-      return (
-        book.author.toLowerCase().includes(searchTerm) ||
-        book.title.toLowerCase().includes(searchTerm)
-      );
-    });
-  };
-
-  render() {
-    return (
-      <div>
-        <input
-          value={this.state.value}
-          onChange={this.handleChange}
-          placeholder="search here"
+function Search({ value, handleChange }) {
+  return (
+    <SearchBar>
+      <MenuButton>☰</MenuButton>
+      <SearchLabel for="search">
+        Search for books
+      </SearchLabel>
+      <SearchInput
+        id="search"
+        value={value}
+        onChange={handleChange}
+        placeholder="Search for books"
+        required
       />
-      </div>
-    );
-  }
+    </SearchBar>
+  );
 }
 
-function mapStateToProps(state) {
-  return {
-    books: state.books,
-  };
-}
-
-export default connect(mapStateToProps)(Search);
+export default Search;

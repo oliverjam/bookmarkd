@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+// import { Link } from 'react-router-dom';
+// import styled from 'styled-components';
+
+import Header from './base/Header';
+import Search from './Search';
+import SiteNav from './SiteNav';
 import SearchResults from './../components/SearchResults';
 
-import Nav from './base/Nav';
-
-const TopNavigation = styled(Nav)`
-`;
-
-class TopNav extends Component {
+class PageHeader extends Component {
   constructor(props) {
     super(props);
 
@@ -43,16 +42,12 @@ class TopNav extends Component {
 
   render() {
     return (
-      <TopNavigation>
-        <Link to="/">Bookmarkd</Link>
-        <input
-          value={this.state.value}
-          onChange={this.handleChange}
-          placeholder="search here"
-        />
+      <Header>
+        <Search value={this.state.value} handleChange={this.handleChange} />
+        <SiteNav />
         {this.state.searchResults.length > 0 &&
           <SearchResults books={this.state.searchResults} />}
-      </TopNavigation>
+      </Header>
     );
   }
 }
@@ -61,4 +56,4 @@ const mapStateToProps = state => ({
   books: state.books,
 });
 
-export default connect(mapStateToProps)(TopNav);
+export default connect(mapStateToProps)(PageHeader);

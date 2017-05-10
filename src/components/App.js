@@ -5,8 +5,8 @@ import { ThemeProvider, injectGlobal } from 'styled-components';
 import theme from '../theme';
 
 import Home from './Home';
-import TopNav from './TopNav';
-import BottomNav from './BottomNav';
+import PageHeader from './PageHeader';
+// import BottomNav from './BottomNav';
 import Reader from './Reader';
 import Snackbar from './Snackbar';
 
@@ -20,6 +20,17 @@ injectGlobal`
     font-size: 112.5%;
   }
 
+  input,
+  button,
+  label,
+  textarea {
+    font-family: inherit;
+    font-size: 100%;
+    color: inherit;
+    background: none;
+    border: none;
+  }
+
   body,
   ul,
   h1,
@@ -29,6 +40,10 @@ injectGlobal`
   figure {
     margin: 0;
     padding: 0;
+  }
+
+  ul {
+    list-style-type: none;
   }
 
   body {
@@ -53,8 +68,10 @@ class App extends Component {
       <Router>
         <ThemeProvider theme={theme}>
           <div>
-            <TopNav />
+            <PageHeader />
             <Route exact path="/" component={Home} />
+            <Route path="/browse" component={Home} />
+            <Route path="/library" component={Home} />
             <Route
               path="/reader/:slug"
               render={({ match }) => {
@@ -64,7 +81,7 @@ class App extends Component {
 
             {this.props.message && <Snackbar message={this.props.message} />}
 
-            <BottomNav />
+            {/* <BottomNav /> */}
           </div>
         </ThemeProvider>
       </Router>
