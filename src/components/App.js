@@ -24,6 +24,7 @@ injectGlobal`
   button,
   label,
   textarea {
+    font-family: inherit;
     font-size: 100%;
     color: inherit;
     background: none;
@@ -39,6 +40,10 @@ injectGlobal`
   figure {
     margin: 0;
     padding: 0;
+  }
+
+  ul {
+    list-style-type: none;
   }
 
   body {
@@ -65,6 +70,8 @@ class App extends Component {
           <div>
             <PageHeader />
             <Route exact path="/" component={Home} />
+            <Route path="/browse" component={Home} />
+            <Route path="/library" component={Home} />
             <Route
               path="/reader/:slug"
               render={({ match }) => {

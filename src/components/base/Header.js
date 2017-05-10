@@ -7,6 +7,10 @@ const Header = styled.header`
   color: ${props => props.theme.textLight};
   background-color: ${props => props.theme.primary};
   padding: ${props => props.theme.spaceM};
+  @media (min-width: 40em) {
+    padding-left: ${props => props.theme.spaceL} ;
+    padding-right: ${props => props.theme.spaceL} ;
+  }
 `;
 
 export default Header;

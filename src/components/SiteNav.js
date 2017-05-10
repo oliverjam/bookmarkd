@@ -1,15 +1,22 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-import { Nav } from './base/Nav';
+import { Nav, NavList, NavItem } from './base/Nav';
 
 function SiteNav() {
   return (
     <Nav>
-      <ul>
-        <li>Home</li>
-        <li>Browse</li>
-        <li>Library</li>
-      </ul>
+      <NavList>
+        <NavItem>
+          <NavLink exact to="/">Home</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink to="/browse">Browse</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink to="/library">Library</NavLink>
+        </NavItem>
+      </NavList>
     </Nav>
   );
 }
