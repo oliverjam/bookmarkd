@@ -12,6 +12,7 @@ const defaultState = {
       slug: 'a-modest-proposal',
       id: 'f34a73c5-caf0-4d1d-b76c-a4e116d70a4e',
       genre: 'non-fiction',
+      saved: false,
     },
     {
       title: 'The Yellow Wallpaper',
@@ -19,6 +20,7 @@ const defaultState = {
       slug: 'the-yellow-wallpaper',
       id: '096b7b4c-b36e-4555-a9fe-30e76e33c7a7',
       genre: 'drama',
+      saved: true,
     },
     {
       title: 'The Communist Manifesto',

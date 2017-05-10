@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Grid from './base/Grid';
 import Book from './Book';
 import uuid from 'uuid/v4';
+import randomSvg from '../lib/randomBackground';
 
 const mapStateToProps = state => ({
   books: state.books,
@@ -19,6 +20,10 @@ const Row = styled.ul`
 
 const BookList = styled.li`
   list-style-type: none;
+`;
+
+const GenreTitle = styled.h2`
+  padding: ${props => props.theme.spaceS}
 `;
 
 class BookRows extends Component {
@@ -39,10 +44,17 @@ class BookRows extends Component {
       <div>
         {Object.keys(myBooks).map(genre => (
           <div key={uuid()}>
-            <h2>{genre}</h2>
+            <GenreTitle>
+              {genre.replace(genre[0], genre[0].toUpperCase())}
+            </GenreTitle>
             <Row>
               {myBooks[genre].map(genredBook => (
-                <BookList key={uuid()}><Book details={genredBook} /></BookList>
+                <BookList key={uuid()}>
+                  <Book
+                    details={genredBook}
+                    bgNumber={Math.floor(Math.random() * randomSvg.length)}
+                  />
+                </BookList>
               ))}
             </Row>
           </div>

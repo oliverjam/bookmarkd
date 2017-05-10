@@ -8,22 +8,31 @@ import { Link } from 'react-router-dom';
 import Card from './base/Card';
 import Title from './base/Title';
 
+import randomSvg from '../lib/randomBackground';
+
 const Footer = styled.footer`
   font-size: 0.8rem;
-  overflow: scroll;
   height: 20%;
+  padding: ${props => props.theme.spaceS}
 `;
 
 const Button = styled.button`
   margin-top: 0.8rem;
-`;
+  border: none;
+  background-color: ${props => props.theme.secondary};
+  padding: calc(${props => props.theme.spaceS} / 2);
+  box-shadow: 0 1px 1px ${props => props.theme.bgDark};
+  border-radius: 2px;
+  `;
 
 function Book(props) {
-  const { title, author, id, slug } = props.details;
+  const { title, author, id, slug, saved } = props.details;
   const url = `https://s3-eu-west-1.amazonaws.com/react-reader/${slug}.epub`;
   const cacheBook = () => props.fetchBook(url, id);
+
   return (
-    <Card>
+    <Card style={{ backgroundImage: `${randomSvg[props.bgNumber]}` }}>
+
       <Title>
         <Link to={`/reader/${slug}`}>
           {title.split(' ').length > 8
@@ -33,7 +42,7 @@ function Book(props) {
       </Title>
       <Footer><cite>{author}</cite></Footer>
       <Button onClick={cacheBook}>
-        save offline ♥
+        {saved ? 'saved ✔' : 'save offline ♥'}
       </Button>
     </Card>
   );
