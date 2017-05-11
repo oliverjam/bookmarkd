@@ -1,15 +1,16 @@
 module.exports = {
   runtimeCaching: [
     {
-      urlPattern: /.epub/,
+      urlPattern: /amazonaws\.com\/all-the-epubs/,
       handler: 'cacheFirst',
       options: {
         cache: {
-          name: 'books',
+          name: 'books-cache',
         },
       },
     },
   ],
+  verbose: true,
   stripPrefix: 'build/',
   staticFileGlobs: [
     'build/*.html',
