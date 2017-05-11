@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { ReactReader /*, ReactReaderStyle*/ } from 'react-reader';
-// import { EpubView } from 'react-reader';
+import { showSnackbarWithTimeout } from './../actions/snackbarActions';
 import styled from 'styled-components';
 
 import ReaderHeader from './ReaderHeader';
@@ -28,6 +28,7 @@ const ReaderContainer = styled.div`
 
 class Reader extends Component {
   componentDidMount() {
+    this.props.showSnackbarWithTimeout('Book added to Your Library');
     this.props.addBook({
       slug: this.props.slug,
     });
@@ -82,7 +83,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ addBook, updateCurrentLocation }, dispatch);
+  return bindActionCreators(
+    { addBook, showSnackbarWithTimeout, updateCurrentLocation },
+    dispatch
+  );
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Reader);

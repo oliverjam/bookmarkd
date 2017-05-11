@@ -84,8 +84,8 @@ class App extends Component {
               }}
             />
 
-            {this.props.message && <Snackbar message={this.props.message} />}
-
+            <Snackbar message={this.props.message} />
+            {/*{this.props.message && <Snackbar message={this.props.message} />} */}
           </div>
         </ThemeProvider>
       </Router>
@@ -94,5 +94,3 @@ class App extends Component {
 }
 
 export default connect(mapStateToProps)(App);
-// THIS IS HOW TO USE showSnackbar
-// export default connect(mapStateToProps, { showSnackbar })(App);

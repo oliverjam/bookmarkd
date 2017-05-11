@@ -14,6 +14,6 @@ export function showSnackbarWithTimeout(message) {
   return function(dispatch) {
     dispatch(showSnackbar(message));
 
-    setTimeout(() => dispatch(hideSnackbar()), 2000);
+    setTimeout(() => dispatch(hideSnackbar()), 5000);
   };
 }
