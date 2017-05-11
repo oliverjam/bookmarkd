@@ -8,6 +8,7 @@ import Home from './Home';
 import Browse from './Browse';
 import Reader from './Reader';
 import Snackbar from './Snackbar';
+import MyLibrary from './MyLibrary';
 
 // eslint-disable-next-line
 injectGlobal`
@@ -75,7 +76,7 @@ class App extends Component {
           <div>
             <Route exact path="/" component={Home} />
             <Route path="/browse" component={Browse} />
-            <Route path="/library" component={Home} />
+            <Route path="/library" component={MyLibrary} />
             <Route
               path="/reader/:slug"
               render={({ match }) => {
