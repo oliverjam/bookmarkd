@@ -5,6 +5,7 @@ import { ThemeProvider, injectGlobal } from 'styled-components';
 import theme from '../theme';
 
 import Home from './Home';
+import Browse from './Browse';
 import Reader from './Reader';
 import Snackbar from './Snackbar';
 
@@ -67,7 +68,7 @@ class App extends Component {
         <ThemeProvider theme={theme}>
           <div>
             <Route exact path="/" component={Home} />
-            <Route path="/browse" component={Home} />
+            <Route path="/browse" component={Browse} />
             <Route path="/library" component={Home} />
             <Route
               path="/reader/:slug"

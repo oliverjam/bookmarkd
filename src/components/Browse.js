@@ -1,17 +1,14 @@
 import React from 'react';
-import PageHeader from './PageHeader';
-// import BookGrid from './BookGrid';
+import PageLayout from './PageLayout';
 import BookRows from './BookRows';
 
-function Home() {
+function Browse() {
   return (
-    <div>
-      <PageHeader />
-      <h1>Books</h1>
+    <PageLayout>
+      <h1>Browse all books</h1>
       <BookRows />
-      {/* <BookGrid /> */}
-    </div>
+    </PageLayout>
   );
 }
 
-export default Home;
+export default Browse;

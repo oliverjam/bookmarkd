@@ -1,14 +1,13 @@
 import React from 'react';
-import PageHeader from './PageHeader';
+import PageLayout from './PageLayout';
 import BookRows from './BookRows';
 
 function Home() {
   return (
-    <div>
-      <PageHeader />
+    <PageLayout>
       <h1>Books</h1>
       <BookRows />
-    </div>
+    </PageLayout>
   );
 }
 
