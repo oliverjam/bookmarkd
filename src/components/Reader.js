@@ -24,28 +24,25 @@ const ReaderContainer = styled.div`
   flex: 1;
 `;
 
-// ReactReaderStyle.reader.fontSize = '6em';
-
 class Reader extends Component {
   componentDidMount() {
-    this.props.showSnackbarWithTimeout('Book added to Your Library');
+    const added = this.props.user.books.some(
+      book => book.slug === this.props.slug
+    );
+    !added
+      ? this.props.showSnackbarWithTimeout('Book added to Your Library')
+      : this.props.showSnackbarWithTimeout('Already added to your library');
     this.props.addBook({
       slug: this.props.slug,
     });
   }
 
   onLocationChange = location => {
-    // console.log('change', location);
-    this.props.updateCurrentLocation({ slug: this.props.slug, location });
+    this.props.updateCurrentLocation({
+      slug: this.props.slug,
+      location,
+    });
   };
-
-  // next = () => {
-  //   this.refs.reader.nextPage();
-  // };
-  //
-  // prev = () => {
-  //   this.refs.reader.prevPage();
-  // };
 
   render() {
     const { books } = this.props.user;
@@ -54,7 +51,6 @@ class Reader extends Component {
     );
 
     const currentLocation = (books[indexOfCurrentBook] || {}).location;
-    // console.log('render', currentLocation);
     return (
       <ReaderPageContainer>
         <ReaderHeader />
@@ -67,12 +63,12 @@ class Reader extends Component {
           />
         </ReaderContainer>
         {/* <EpubView
-          ref="reader"
-          url={`https://s3.eu-west-2.amazonaws.com/all-the-epubs/${this.props.slug}.epub`}
-          title={slugToTitle(this.props.slug)}
-          location={currentLocation}
-          locationChanged={this.onLocationChange}
-        /> */}
+                  ref="reader"
+                  url={`https://s3.eu-west-2.amazonaws.com/all-the-epubs/${this.props.slug}.epub`}
+                  title={slugToTitle(this.props.slug)}
+                  location={currentLocation}
+                  locationChanged={this.onLocationChange}
+                /> */}
       </ReaderPageContainer>
     );
   }
@@ -84,7 +80,11 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
-    { addBook, showSnackbarWithTimeout, updateCurrentLocation },
+    {
+      addBook,
+      showSnackbarWithTimeout,
+      updateCurrentLocation,
+    },
     dispatch
   );
 };

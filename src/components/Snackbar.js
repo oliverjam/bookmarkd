@@ -16,7 +16,6 @@ const SnackBarContainer = styled.div`
   z-index: 10;
 `;
 function Snackbar(props) {
-  console.log('props', props.message);
   return (
     <SnackBarContainer message={props.message}>
       <p>{props.message}</p>
