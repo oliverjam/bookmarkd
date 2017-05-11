@@ -1,6 +1,12 @@
 import * as actions from './index';
 import * as snackActions from './snackbarActions';
 import * as types from './../constants';
+import expect from 'expect';
+import thunk from 'redux-thunk';
+import configureMockStore from 'redux-mock-store';
+import nock from 'nock';
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
 
 describe('Action tests', () => {
   const expectedSlug = {
@@ -35,7 +41,26 @@ describe('Action tests', () => {
       expectedNewLocation
     );
   });
-  it('Should return a two actions asynchronously', () => {
+});
+
+describe('Async Actions', () => {
+  afterEach(() => {
+    nock.cleanAll();
+  });
+
+  it('Should return two actions asynchronously', () => {
     //thunk test
-  })
+    const expectedActions = [
+      { type: types.SHOW_MESSAGE, message: 'message' },
+      { type: types.HIDE_MESSAGE, message: '' },
+    ];
+
+    const store = mockStore({ message: '' });
+    store.dispatch(
+      snackActions.showSnackbarWithTimeout(expectedActions[0].message)
+    );
+    setTimeout(function() {
+      expect(store.getActions()).toEqual(expectedActions);
+    }, 1000);
+  });
 });
