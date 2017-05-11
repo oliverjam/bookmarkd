@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Row = styled.ul`
   margin: -${props => props.theme.spaceS};
-  display:flex;
+  display: flex;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
 `;

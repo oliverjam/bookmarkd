@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import uuid from 'uuid/v4';
 
 import Book from './Book';
+import { Section, SectionTitle } from './base/Section';
 import { Row, RowItem } from './base/Row';
 import randomSvg from '../lib/randomBackground';
 
@@ -26,12 +27,12 @@ class BookRows extends Component {
   render() {
     const myBooks = this.getBooksSeparatedByGenre();
     return (
-      <div>
+      <divv>
         {Object.keys(myBooks).map(genre => (
-          <div key={uuid()}>
-            <h2>
+          <Section key={uuid()}>
+            <SectionTitle>
               {genre.replace(genre[0], genre[0].toUpperCase())}
-            </h2>
+            </SectionTitle>
             <Row>
               {myBooks[genre].map(genredBook => (
                 <RowItem key={uuid()}>
@@ -42,9 +43,9 @@ class BookRows extends Component {
                 </RowItem>
               ))}
             </Row>
-          </div>
+          </Section>
         ))}
-      </div>
+      </divv>
     );
   }
 }
