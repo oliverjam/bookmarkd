@@ -23,16 +23,18 @@ function Book(props) {
         backgroundColor: `${colours[Math.round(bgImageNumber / 6.5)]}`,
       }}
     >
-      <CardBody>
-        <CardTitle>
-          <Link to={`/reader/${slug}`}>
-            {title.split(' ').length > 8
-              ? title.split(' ').slice(0, 8).join(' ') + '...'
-              : title}
-          </Link>
-        </CardTitle>
-        <p>{author}</p>
-      </CardBody>
+      <Link style={{ flex: 1 }} to={`/reader/${slug}`}>
+        <CardBody>
+          <CardTitle>
+            <Link to={`/reader/${slug}`}>
+              {title.split(' ').length > 8
+                ? title.split(' ').slice(0, 8).join(' ') + '...'
+                : title}
+            </Link>
+          </CardTitle>
+          <p>{author}</p>
+        </CardBody>
+      </Link>
       <CardFooter>
         <CardButton onClick={cacheBook}>
           {saved ? 'saved ✔' : 'Save offline ↓'}
