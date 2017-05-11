@@ -10,7 +10,7 @@ function PageLayout({ title, children }) {
       <MainContent>
         <MainTitle>{title}</MainTitle>
         {children}
-      </MainContent>;
+      </MainContent>
     </div>
   );
 }

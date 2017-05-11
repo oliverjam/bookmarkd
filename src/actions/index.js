@@ -14,12 +14,15 @@ export const fetchBook = async (url, id) => {
   const saved = await fetch(url).then(
     res => (res.status === 200 ? true : false)
   );
-  console.log('I am working ', id, url);
-  return {
-    type: CACHE_BOOK,
-    id,
-    payload: saved,
-  };
+  // const saved = await caches
+  //   .open('books-cache')
+  //   .then(cache => cache.add(url).then(() => true));
+  // console.log('I am working ', id, url);
+  // return {
+  //   type: CACHE_BOOK,
+  //   id,
+  //   payload: saved,
+  // };
 };
 
 export const addBook = ({ slug }) => ({

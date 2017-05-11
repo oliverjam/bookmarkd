@@ -1,20 +1,48 @@
 import styled from 'styled-components';
 import { breakLongWords } from './style-utils';
 
+import { Link } from 'react-router-dom';
+
 export const Card = styled.article`
   width: 100%;
   height: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
-  font-size: 0.8em;
+  font-size: 0.85em;
   color: ${props => props.theme.textLight};
-  background-color: ${props => props.theme.tertiary};
-  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 5px -5px 0 rgba(0, 0, 0, 0.5);
+`;
+
+export const CardLink = styled(Link)`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: ${props => props.theme.bgLight};
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  &:hover,
+  &:focus {
+    outline: none;
+    &::after {
+      opacity: 0.4;
+    }
+  }
 `;
 
 export const CardBody = styled.div`
-  padding: ${props => props.theme.spaceM};
+  padding: ${props => props.theme.spaceS};
+  z-index: 10;
 `;
 
 export const CardTitle = styled.h3`
