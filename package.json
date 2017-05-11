@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "enzyme": "^2.8.2",
     "expect": "^1.20.2",
     "nock": "^9.0.13",
     "npm-run-all": "^4.0.2",
+    "react-addons-test-utils": "^15.5.1",
     "react-scripts": "0.9.5",
+    "react-test-renderer": "^15.5.4",
     "redux-mock-store": "^1.2.3",
     "stdio": "^0.2.7",
     "sw-precache": "^5.1.1",

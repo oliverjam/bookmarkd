@@ -68,7 +68,7 @@ const mapStateToProps = state => ({
   message: state.message,
 });
 
-class App extends Component {
+export class App extends Component {
   render() {
     return (
       <Router>
