@@ -1,17 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { ReactReader } from 'react-reader';
+import { ReactReader, ReactReaderStyle } from 'react-reader';
+// import { EpubView } from 'react-reader';
 import styled from 'styled-components';
 
+import ReaderHeader from './ReaderHeader';
 import { addBook, updateCurrentLocation } from '../actions';
 import slugToTitle from './../lib/slugToTitle';
 
-const ReaderContainer = styled.div`
-  height: 100vh;
-  position: relative;
-  border: 1px solid black;
+const ReaderPageContainer = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 `;
+
+const ReaderContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+`;
+
+// ReactReaderStyle.reader.fontSize = '6em';
 
 class Reader extends Component {
   componentDidMount() {
@@ -25,6 +38,14 @@ class Reader extends Component {
     this.props.updateCurrentLocation({ slug: this.props.slug, location });
   };
 
+  // next = () => {
+  //   this.refs.reader.nextPage();
+  // };
+  //
+  // prev = () => {
+  //   this.refs.reader.prevPage();
+  // };
+
   render() {
     const { books } = this.props.user;
     const indexOfCurrentBook = books.findIndex(
@@ -33,16 +54,25 @@ class Reader extends Component {
 
     const currentLocation = (books[indexOfCurrentBook] || {}).location;
     // console.log('render', currentLocation);
-
     return (
-      <ReaderContainer>
-        <ReactReader
+      <ReaderPageContainer>
+        <ReaderHeader />
+        <ReaderContainer>
+          <ReactReader
+            url={`https://s3.eu-west-2.amazonaws.com/all-the-epubs/${this.props.slug}.epub`}
+            title={slugToTitle(this.props.slug)}
+            location={currentLocation}
+            locationChanged={this.onLocationChange}
+          />
+        </ReaderContainer>
+        {/* <EpubView
+          ref="reader"
           url={`https://s3.eu-west-2.amazonaws.com/all-the-epubs/${this.props.slug}.epub`}
           title={slugToTitle(this.props.slug)}
           location={currentLocation}
           locationChanged={this.onLocationChange}
-        />
-      </ReaderContainer>
+        /> */}
+      </ReaderPageContainer>
     );
   }
 }
