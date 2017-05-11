@@ -1,5 +1,6 @@
 import React from 'react';
 import PageHeader from './PageHeader';
+// import BookGrid from './BookGrid';
 import BookRows from './BookRows';
 
 function Home() {
@@ -8,6 +9,7 @@ function Home() {
       <PageHeader />
       <h1>Books</h1>
       <BookRows />
+      {/* <BookGrid /> */}
     </div>
   );
 }

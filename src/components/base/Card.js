@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import randomSvg from '../../lib/randomBackground';
+// import randomSvg from '../../lib/randomBackground';
 
 const Card = styled.article`
   width: 10rem;

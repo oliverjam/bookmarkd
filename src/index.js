@@ -6,8 +6,8 @@ import promiseMiddleware from 'redux-promise';
 
 import thunk from 'redux-thunk';
 
-import { offline } from 'redux-offline';
-import offlineConfig from 'redux-offline/lib/defaults';
+// import { offline } from 'redux-offline';
+// import offlineConfig from 'redux-offline/lib/defaults';
 
 import rootReducer from './reducers';
 import App from './components/App';
