@@ -3,6 +3,7 @@ const unzipper = require('unzipper');
 const xmlParser = require('xml2json');
 const uuid = require('uuid/v4');
 const stdio = require('stdio');
+const fetch = require('node-fetch');
 
 stdio.question('Enter path of directory you want to read', (err, directory) => {
   if (err) throw err;
@@ -15,7 +16,7 @@ stdio.question('Enter path of directory you want to read', (err, directory) => {
 function makeBookArr(dir, filePath = './book-array.js') {
   const bookArr = fs.readdirSync(dir);
 
-  const bookInfo = [];
+  let bookInfo = [];
 
   bookArr.forEach(book => {
     const stream = fs.createReadStream(`${dir}/${book}`);
@@ -39,6 +40,7 @@ function makeBookArr(dir, filePath = './book-array.js') {
                 return accumulate;
               }, '');
             }
+
             const returnObj = {
               title: metadata['dc:title'],
               author: metadata['dc:creator']
@@ -47,9 +49,31 @@ function makeBookArr(dir, filePath = './book-array.js') {
               slug: book.slice(0, book.length - 5),
               id: uuid(),
             };
+
+            const charCode =
+              returnObj.title[0].toUpperCase().charCodeAt(0) - 65;
+            if (charCode >= 0 && charCode <= 5) {
+              returnObj.genre = 'A to F';
+            } else if (charCode > 5 && charCode <= 12) {
+              returnObj.genre = 'G to M';
+            } else if (charCode > 12 && charCode <= 20) {
+              returnObj.genre = 'N to U';
+            } else {
+              returnObj.genre = 'V to Z';
+            }
+
             bookInfo.push(returnObj);
 
             if (bookInfo.length === bookArr.length) {
+              bookInfo = bookInfo.sort((a, b) => {
+                if (a.genre[0] < b.genre[0]) {
+                  return -1;
+                }
+                if (a.genre[0] > b.genre[0]) {
+                  return 1;
+                }
+                return 0;
+              });
               fs.writeFile(filePath, JSON.stringify(bookInfo), err => {
                 if (err) throw err;
                 console.log(`Your array has been written to ${filePath}!`);
