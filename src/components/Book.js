@@ -5,8 +5,7 @@ import { fetchBook } from '../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
-import Card from './base/Card';
-import Title from './base/Title';
+import { Card, CardBody, CardTitle, CardFooter, CardButton } from './base/Card';
 
 import randomSvg from '../lib/randomBackground';
 
@@ -34,18 +33,19 @@ function Book(props) {
 
   return (
     <Card style={{ backgroundImage: `${randomSvg[bgImageNumber]}` }}>
-
-      <Title>
+      <CardTitle>
         <Link to={`/reader/${slug}`}>
           {title.split(' ').length > 8
             ? title.split(' ').slice(0, 8).join(' ') + '...'
             : title}
         </Link>
-      </Title>
-      <Footer><cite>{author}</cite></Footer>
-      <Button onClick={cacheBook}>
-        {saved ? 'saved ✔' : 'save offline ♥'}
-      </Button>
+      </CardTitle>
+      <p>{author}</p>
+      <CardFooter>
+        <CardButton onClick={cacheBook}>
+          {saved ? 'saved ✔' : 'Save offline ↓'}
+        </CardButton>
+      </CardFooter>
     </Card>
   );
 }
