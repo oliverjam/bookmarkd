@@ -27,7 +27,7 @@ const Button = styled.button`
 
 function Book(props) {
   const { title, author, id, slug, saved } = props.details;
-  const url = `https://s3-eu-west-2.amazonaws.com/react-reader/${slug}.epub`;
+  const url = `https://s3-eu-west-2.amazonaws.com/all-the-epubs/${slug}.epub`;
   const cacheBook = () => props.fetchBook(url, id);
   const bgImageNumber = author[0].toUpperCase().charCodeAt(0) - 65;
 
