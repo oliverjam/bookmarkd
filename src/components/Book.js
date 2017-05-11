@@ -14,9 +14,15 @@ function Book(props) {
   const url = `https://s3-eu-west-2.amazonaws.com/all-the-epubs/${slug}.epub`;
   const cacheBook = () => props.fetchBook(url, id);
   const bgImageNumber = author[0].toUpperCase().charCodeAt(0) - 65;
+  const colours = ['#480B13', ' #39092B', '#4C260B', '#093D09'];
 
   return (
-    <Card style={{ backgroundImage: `${randomSvg[bgImageNumber]}` }}>
+    <Card
+      style={{
+        backgroundImage: `${randomSvg[bgImageNumber]}`,
+        backgroundColor: `${colours[Math.round(bgImageNumber / 6.5)]}`,
+      }}
+    >
       <CardBody>
         <CardTitle>
           <Link to={`/reader/${slug}`}>
