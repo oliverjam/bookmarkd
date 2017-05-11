@@ -11,7 +11,7 @@ export const Card = styled.article`
   flex-direction: column;
   font-size: 0.85em;
   color: ${props => props.theme.textLight};
-  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 5px -5px 0 rgba(0, 0, 0, 0.5);
 `;
 
 export const CardLink = styled(Link)`
