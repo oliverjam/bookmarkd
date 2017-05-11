@@ -4,13 +4,14 @@ const palette = {
   orange: '#dc8d3b',
   burgundy: '#542b34',
   green: '#8cac6c',
+  purple: '#39092B',
   charcoal: '#36384C',
 };
 
 export default {
   primary: palette.orange,
   secondary: palette.green,
-  tertiary: palette.pink,
+  tertiary: palette.purple,
 
   textLight: palette.cream,
   textDark: palette.charcoal,

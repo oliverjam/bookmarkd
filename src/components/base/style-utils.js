@@ -11,3 +11,13 @@ export function visuallyHidden() {
   white-space: nowrap;
   `;
 }
+
+export function breakLongWords() {
+  return `
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    word-break: break-word;
+    hyphens: auto;
+  `;
+}
