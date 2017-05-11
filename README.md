@@ -2,7 +2,7 @@
 
 Choose from over 101 free ebooks and read them online or offline.
 
-We carry high quality ebooks that have been digitized and diligently slugified by a team of volunteers.
+We carry high quality ebooks that have been curated by digitized by 1000s of volunteers.
 
 ## Tech stack:
 
