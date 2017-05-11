@@ -9,7 +9,6 @@ export const Card = styled.article`
   flex-direction: column;
   font-size: 0.8em;
   color: ${props => props.theme.textLight};
-  background-color: ${props => props.theme.tertiary};
   box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.5);
 `;
 
