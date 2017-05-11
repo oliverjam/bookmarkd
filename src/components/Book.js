@@ -9,21 +9,6 @@ import { Card, CardBody, CardTitle, CardFooter, CardButton } from './base/Card';
 
 import randomSvg from '../lib/randomBackground';
 
-const Footer = styled.footer`
-  font-size: 0.8rem;
-  height: 20%;
-  padding: ${props => props.theme.spaceS}
-`;
-
-const Button = styled.button`
-  margin-top: 0.8rem;
-  border: none;
-  background-color: ${props => props.theme.secondary};
-  padding: calc(${props => props.theme.spaceS} / 2);
-  box-shadow: 0 1px 1px ${props => props.theme.bgDark};
-  border-radius: 2px;
-  `;
-
 function Book(props) {
   const { title, author, id, slug, saved } = props.details;
   const url = `https://s3-eu-west-2.amazonaws.com/all-the-epubs/${slug}.epub`;

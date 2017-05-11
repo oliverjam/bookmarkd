@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
-const MainContent = styled.main`
+export const MainContent = styled.main`
   padding: ${props => props.theme.spaceL};
 `;
 
-export default MainContent;
+export const MainTitle = styled.h1`
+  margin-bottom: ${props => props.theme.spaceM};
+`;
