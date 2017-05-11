@@ -5,12 +5,12 @@ import BookRows from './BookRows';
 function Home() {
   return (
     <PageLayout>
-      <h1>Books</h1>
+      <h1>Welcome to Bookmarkd 🤓📚</h1>
       <p>
-        <section>Welcome to Bookmarkd 🤓!</section>
         We aim to provide a free, open source platform to read, and eventually upload books.
         You can browse our library of available books, and download these books onto your local machine to peruse later.
       </p>
+      <h2>Books</h2>
       <BookRows />
     </PageLayout>
   );
