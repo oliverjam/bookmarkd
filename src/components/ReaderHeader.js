@@ -11,7 +11,6 @@ class ReaderHeader extends Component {
         <Link to="/">
           <IconBack description="Go back to the homepage" />
         </Link>
-        <button>Reader settings</button>
       </Header>
     );
   }
