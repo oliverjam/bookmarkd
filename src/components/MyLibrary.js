@@ -15,6 +15,8 @@ class MyLibrary extends Component {
     });
     return (
       <PageLayout title="My Library">
+        {!myBooks.length &&
+          <h3>Any books you open will appear here for you to read later.</h3>}
         <Row>
           {myBooks.length > 0 &&
             myBooks.map(book => {
