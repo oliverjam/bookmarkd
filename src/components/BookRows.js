@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import { connect } from 'react-redux';
 import uuid from 'uuid/v4';
 
@@ -27,7 +26,7 @@ class BookRows extends Component {
   render() {
     const myBooks = this.getBooksSeparatedByGenre();
     return (
-      <divv>
+      <div>
         {Object.keys(myBooks).map(genre => (
           <Section key={uuid()}>
             <SectionTitle>
@@ -45,7 +44,7 @@ class BookRows extends Component {
             </Row>
           </Section>
         ))}
-      </divv>
+      </div>
     );
   }
 }

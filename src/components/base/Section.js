@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Section = styled.ul`
+export const Section = styled.section`
   margin-bottom: ${props => props.theme.spaceM};
   @media (min-width: 40em) {
     margin-bottom: ${props => props.theme.spaceL};

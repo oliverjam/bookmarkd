@@ -4,8 +4,7 @@ import BookRows from './BookRows';
 
 function Home() {
   return (
-    <PageLayout>
-      <h1>Welcome to Bookmarkd 🤓📚</h1>
+    <PageLayout title="Welcome to Bookmarkd 🤓📚">
       <p>
         We aim to provide a free, open source platform to read, and eventually upload books.
         You can browse our library of available books, and download these books onto your local machine to peruse later.
