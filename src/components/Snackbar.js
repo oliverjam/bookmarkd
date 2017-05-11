@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// bottom: ${props => props.theme.spaceS}
 const SnackBarContainer = styled.div`
   background-color: ${props => props.theme.bgDark};
   position: absolute;
@@ -9,7 +8,7 @@ const SnackBarContainer = styled.div`
   opacity: ${props => (props.message === '' ? '0' : '1')};
   transition: opacity 0.3s ease-in;
   bottom: 2.5rem;
-  height: 2.5rem;
+  height: auto;
   width: 100%;
   text-align: center;
   padding: ${props => props.theme.spaceS}

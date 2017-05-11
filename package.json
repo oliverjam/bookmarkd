@@ -21,6 +21,7 @@
     "react-redux": "^5.0.4",
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",
+    "redux-devtools-extension": "^2.13.2",
     "redux-offline": "^2.0.0",
     "redux-promise": "^0.5.3",
     "redux-promise-middleware": "^4.2.0",
