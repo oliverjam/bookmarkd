@@ -1,13 +1,16 @@
 import React from 'react';
 
 import PageHeader from './PageHeader';
-import { MainContent } from './base/MainContent';
+import { MainContent, MainTitle } from './base/MainContent';
 
-function PageLayout({ children }) {
+function PageLayout({ title, children }) {
   return (
     <div>
       <PageHeader />
-      <MainContent>{children}</MainContent>;
+      <MainContent>
+        <MainTitle>{title}</MainTitle>
+        {children}
+      </MainContent>;
     </div>
   );
 }

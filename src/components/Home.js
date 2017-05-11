@@ -4,8 +4,7 @@ import BookRows from './BookRows';
 
 function Home() {
   return (
-    <PageLayout>
-      <h1>Books</h1>
+    <PageLayout title="Books">
       <BookRows />
     </PageLayout>
   );
