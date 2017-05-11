@@ -14,8 +14,7 @@ class MyLibrary extends Component {
       return slugs.includes(book.slug);
     });
     return (
-      <PageLayout>
-        <SectionTitle>My Library</SectionTitle>
+      <PageLayout title="My Library">
         <Row>
           {myBooks.length > 0 &&
             myBooks.map(book => {
