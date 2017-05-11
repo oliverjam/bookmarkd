@@ -8,12 +8,15 @@ const SnackBarContainer = styled.div`
   color: white;
   opacity: ${props => (props.message === '' ? '0' : '1')};
   transition: opacity 0.3s ease-in;
-  bottom: 0;
+  bottom: 2.5rem;
   height: 2.5rem;
   width: 100%;
   text-align: center;
   padding: ${props => props.theme.spaceS}
-  z-index: 10;
+  z-index: ${props => (props.message === '' ? '-100' : '10')};
+  @media(min-width:40em) {
+    bottom: 0;
+  }
 `;
 function Snackbar(props) {
   return (

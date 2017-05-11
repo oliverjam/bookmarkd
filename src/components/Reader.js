@@ -30,7 +30,9 @@ class Reader extends Component {
       book => book.slug === this.props.slug
     );
     !added
-      ? this.props.showSnackbarWithTimeout('Book added to Your Library')
+      ? this.props.showSnackbarWithTimeout(
+          'Book added to Your Library and available offline'
+        )
       : this.props.showSnackbarWithTimeout('Already added to your library');
     this.props.addBook({
       slug: this.props.slug,
