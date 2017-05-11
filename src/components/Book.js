@@ -17,13 +17,13 @@ function Book(props) {
   const colours = ['#480B13', ' #39092B', '#4C260B', '#093D09'];
 
   return (
-    <Card
-      style={{
-        backgroundImage: `${randomSvg[bgImageNumber]}`,
-        backgroundColor: `${colours[Math.round(bgImageNumber / 6.5)]}`,
-      }}
-    >
-      <Link style={{ flex: 1 }} to={`/reader/${slug}`}>
+    <Link to={`/reader/${slug}`}>
+      <Card
+        style={{
+          backgroundImage: `${randomSvg[bgImageNumber]}`,
+          backgroundColor: `${colours[Math.round(bgImageNumber / 6.5)]}`,
+        }}
+      >
         <CardBody>
           <CardTitle>
             <Link to={`/reader/${slug}`}>
@@ -34,13 +34,13 @@ function Book(props) {
           </CardTitle>
           <p>{author}</p>
         </CardBody>
-      </Link>
-      <CardFooter>
-        <CardButton onClick={cacheBook}>
-          {saved ? 'saved ✔' : 'Save offline ↓'}
-        </CardButton>
-      </CardFooter>
-    </Card>
+        {/* <CardFooter>
+          <CardButton onClick={cacheBook}>
+            {saved ? 'saved ✔' : 'Save offline ↓'}
+          </CardButton>
+        </CardFooter> */}
+      </Card>
+    </Link>
   );
 }
 const mapDispatchToProps = dispatch =>
