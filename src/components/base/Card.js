@@ -9,17 +9,17 @@ export const Card = styled.article`
   flex-direction: column;
   font-size: 0.8em;
   color: ${props => props.theme.textLight};
-  background-color: grey;
-  box-shadow: 5px 5px 0 rgba($charcoal, 0.5);
+  background-color: ${props => props.theme.tertiary};
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.5);
 `;
 
 export const CardBody = styled.div`
-padding: ${props => props.theme.spaceM};
+  padding: ${props => props.theme.spaceM};
 `;
 
 export const CardTitle = styled.h3`
+  margin-bottom: ${props => props.theme.spaceS};
   font-size: 1.25em;
-  font-weight: 400;
   ${breakLongWords()};
 `;
 

@@ -40,6 +40,12 @@ injectGlobal`
     padding: 0;
   }
 
+  h1,
+  h2,
+  h3 {
+    font-weight: 400;
+  }
+
   ul {
     list-style-type: none;
   }

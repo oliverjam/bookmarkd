@@ -11,10 +11,6 @@ const mapStateToProps = state => ({
   books: state.books,
 });
 
-const GenreTitle = styled.h2`
-  padding: ${props => props.theme.spaceS}
-`;
-
 class BookRows extends Component {
   getGenres = () => [...new Set(this.props.books.map(book => book.genre))];
 
@@ -33,9 +29,9 @@ class BookRows extends Component {
       <div>
         {Object.keys(myBooks).map(genre => (
           <div key={uuid()}>
-            <GenreTitle>
+            <h2>
               {genre.replace(genre[0], genre[0].toUpperCase())}
-            </GenreTitle>
+            </h2>
             <Row>
               {myBooks[genre].map(genredBook => (
                 <RowItem key={uuid()}>
