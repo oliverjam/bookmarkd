@@ -29,9 +29,11 @@ function Book(props) {
   const { title, author, id, slug, saved } = props.details;
   const url = `https://s3-eu-west-1.amazonaws.com/react-reader/${slug}.epub`;
   const cacheBook = () => props.fetchBook(url, id);
+  const bgImageNumber = author[0].toUpperCase().charCodeAt(0) - 65;
+  console.log(randomSvg.length);
 
   return (
-    <Card style={{ backgroundImage: `${randomSvg[props.bgNumber]}` }}>
+    <Card style={{ backgroundImage: `${randomSvg[bgImageNumber]}` }}>
 
       <Title>
         <Link to={`/reader/${slug}`}>
