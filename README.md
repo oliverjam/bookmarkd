@@ -73,3 +73,9 @@ Then in the ```runtimeCaching``` key we tell our service worker to cache any fil
 Whenever we make a fetch request our service worker intercepts it, checks if we have the file requested in one of our caches and serves it from there instead of doing a network request.
 
 If we don't have the files that has been requested cached the service worker does a normal fetch request, clones the stream (the stream of data from the request can only be used once), uses one stream to send the data back to wherever made the fetch request, and uses the other to put the file into the cache.
+
+### How does it do in Lighthouse?
+
+Lighthouse is Google's audit for PWAs, we did well! 80/100.
+
+![](https://files.gitter.im/fac10/ebook-app/QLPL/Screen-Shot-2017-05-11-at-22.53.58.png)
