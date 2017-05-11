@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { ReactReader, ReactReaderStyle } from 'react-reader';
+import { ReactReader /*, ReactReaderStyle*/ } from 'react-reader';
 // import { EpubView } from 'react-reader';
 import styled from 'styled-components';
 

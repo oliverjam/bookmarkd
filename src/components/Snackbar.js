@@ -1,7 +1,7 @@
 import React from 'react';
 // import { showSnackbar } from '../actions';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+// import { connect } from 'react-redux';
+// import { bindActionCreators } from 'redux';
 
 function Snackbar(props) {
   console.log(props);
