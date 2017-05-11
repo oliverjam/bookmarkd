@@ -5,7 +5,7 @@ import { fetchBook } from '../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
-import { Card, CardBody, CardTitle, CardFooter, CardButton } from './base/Card';
+import { Card, CardLink, CardBody, CardTitle } from './base/Card';
 
 import randomSvg from '../lib/randomBackground';
 
@@ -17,30 +17,28 @@ function Book(props) {
   const colours = ['#480B13', ' #39092B', '#4C260B', '#093D09'];
 
   return (
-    <Link to={`/reader/${slug}`}>
-      <Card
-        style={{
-          backgroundImage: `${randomSvg[bgImageNumber]}`,
-          backgroundColor: `${colours[Math.round(bgImageNumber / 6.5)]}`,
-        }}
-      >
+    <Card
+      style={{
+        backgroundImage: `${randomSvg[bgImageNumber]}`,
+        backgroundColor: `${colours[Math.round(bgImageNumber / 6.5)]}`,
+      }}
+    >
+      <CardLink to={`/reader/${slug}`}>
         <CardBody>
           <CardTitle>
-            <Link to={`/reader/${slug}`}>
-              {title.split(' ').length > 8
-                ? title.split(' ').slice(0, 8).join(' ') + '...'
-                : title}
-            </Link>
+            {title.split(' ').length > 8
+              ? title.split(' ').slice(0, 8).join(' ') + '...'
+              : title}
           </CardTitle>
           <p>{author}</p>
         </CardBody>
-        {/* <CardFooter>
+      </CardLink>
+      {/* <CardFooter>
           <CardButton onClick={cacheBook}>
             {saved ? 'saved ✔' : 'Save offline ↓'}
           </CardButton>
         </CardFooter> */}
-      </Card>
-    </Link>
+    </Card>
   );
 }
 const mapDispatchToProps = dispatch =>

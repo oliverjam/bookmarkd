@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import PageLayout from './../components/PageLayout';
 import Book from './Book';
 import { RowItem, Row } from './base/Row';
-import { SectionTitle } from './base/Section';
 import uuid from 'uuid/v4';
 
 class MyLibrary extends Component {
