@@ -1,26 +1,15 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-// import Grid from './base/Grid';
-import Book from './Book';
 import uuid from 'uuid/v4';
+
+import Book from './Book';
+import { Row, RowItem } from './base/Row';
 import randomSvg from '../lib/randomBackground';
 
 const mapStateToProps = state => ({
   books: state.books,
 });
-
-const Row = styled.ul`
-  height: 25%;
-  width: 100%;
-  display:flex;
-  overflow-x:scroll;
-  margin: ${props => props.theme.spaceM};
-`;
-
-const BookList = styled.li`
-  list-style-type: none;
-`;
 
 const GenreTitle = styled.h2`
   padding: ${props => props.theme.spaceS}
@@ -49,12 +38,12 @@ class BookRows extends Component {
             </GenreTitle>
             <Row>
               {myBooks[genre].map(genredBook => (
-                <BookList key={uuid()}>
+                <RowItem key={uuid()}>
                   <Book
                     details={genredBook}
                     bgNumber={Math.floor(Math.random() * randomSvg.length)}
                   />
-                </BookList>
+                </RowItem>
               ))}
             </Row>
           </div>
