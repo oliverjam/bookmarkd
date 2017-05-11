@@ -27,11 +27,11 @@ function Book(props) {
         </CardTitle>
         <p>{author}</p>
       </CardBody>
-      <CardFooter>
+      {/* <CardFooter>
         <CardButton onClick={cacheBook}>
           {saved ? 'saved ✔' : 'Save offline ↓'}
         </CardButton>
-      </CardFooter>
+      </CardFooter> */}
     </Card>
   );
 }
