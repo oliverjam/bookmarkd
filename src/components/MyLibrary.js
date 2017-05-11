@@ -7,10 +7,6 @@ import { SectionTitle } from './base/Section';
 import uuid from 'uuid/v4';
 
 class MyLibrary extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { myBooksSlugs } = this.props;
     const slugs = myBooksSlugs.map(book => book.slug);
