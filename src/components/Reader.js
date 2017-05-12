@@ -24,7 +24,7 @@ const ReaderContainer = styled.div`
   flex: 1;
 `;
 
-class Reader extends Component {
+export class Reader extends Component {
   componentDidMount() {
     const added = this.props.user.books.some(
       book => book.slug === this.props.slug

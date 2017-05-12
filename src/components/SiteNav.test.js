@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { App } from './App';
+import SiteNav from './SiteNav';
 
-const wrapper = shallow(<App />);
+const wrapper = shallow(<SiteNav />);
 
-describe('App', () => {
+describe('SiteNav', () => {
   it('renders without crashing', () => {
-    // expect(2).toEqual(2);
+    // expect(2).toEqual(3);
     expect(typeof wrapper.props()).toBeTruthy;
   });
 });

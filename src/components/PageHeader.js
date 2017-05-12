@@ -8,7 +8,7 @@ import Search from './Search';
 import SiteNav from './SiteNav';
 import SearchResults from './../components/SearchResults';
 
-class PageHeader extends Component {
+export class PageHeader extends Component {
   constructor(props) {
     super(props);
 

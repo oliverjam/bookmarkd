@@ -6,7 +6,7 @@ import Book from './Book';
 import { Grid, GridItem } from './base/Grid';
 import uuid from 'uuid/v4';
 
-class MyLibrary extends Component {
+export class MyLibrary extends Component {
   render() {
     const { myBooksSlugs } = this.props;
     const slugs = myBooksSlugs.map(book => book.slug);

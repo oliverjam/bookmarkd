@@ -11,7 +11,7 @@ const mapStateToProps = state => ({
   books: state.books,
 });
 
-class BookRows extends Component {
+export class BookRows extends Component {
   getGenres = () => [...new Set(this.props.books.map(book => book.genre))];
 
   createGenresArr = genre =>

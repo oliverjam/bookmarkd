@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { App } from './App';
+import ReaderHeader from './ReaderHeader';
 
-const wrapper = shallow(<App />);
+const wrapper = shallow(<ReaderHeader />);
 
-describe('App', () => {
+describe('ReaderHeader', () => {
   it('renders without crashing', () => {
-    // expect(2).toEqual(2);
+    // expect(2).toEqual(3);
     expect(typeof wrapper.props()).toBeTruthy;
   });
 });

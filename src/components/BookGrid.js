@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
   books: state.books,
 });
 
-function BookGrid(props) {
+export function BookGrid(props) {
   return (
     <Grid>
       {props.books
