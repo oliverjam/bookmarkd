@@ -18,7 +18,7 @@ export const SearchLabel = styled.label`
 
 export const SearchInput = styled.input`
   padding: ${props => props.theme.spaceS} ${props => props.theme.spaceM};
-  padding-left: 0;
+  ${/* padding-left: 0; */ ''}
   width: 100%;
   flex: 1;
 `;
