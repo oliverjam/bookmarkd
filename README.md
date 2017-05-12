@@ -2,6 +2,8 @@
 
 Choose from over 101 free ebooks and read them online or offline.
 
+![](https://cloud.githubusercontent.com/assets/9408641/25997875/371a362e-3716-11e7-919d-0d40671f46fb.jpg)
+
 ## What?
 
 We have made an ebook reader which works cross platform, on mobile, desktop and tablet. It's a [Progressive Web App](https://developers.google.com/web/progressive-web-apps/), which means it is usable offline, fast and built to mimic a native application. It's installable to the home screen on mobile devices (although iOS does not have any offline support :worried:).
