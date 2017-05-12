@@ -74,14 +74,83 @@ The `staticFileGlobs` key is an array of thing to cache when they are first serv
 
 Then in the `runtimeCaching` key we tell our service worker to cache intercept any requests to Amazon and put them into a cache called `books-cache`.
 
-### Performance
+## User Testing
+
+### Andrew
+
+* Open a book and go through some of pages
+  * What's the side bar? (some books not having contents is confusing)
+  * Finds a lot of it self explanatory
+  * Snackbar is oddly placed (not directly at the bottom of the screen
+* Go offline, go to your library and open the book you just opened
+  * Very nice.
+* Find and open Metamorphosis by Franz Kafka
+  * Scrolls up to search bar
+  * Found it worked fine
+* Install the app to your home screen and open it
+* Do you like this functionality? Would you use it?
+  * yeah, really likes adding to home screen, finds it really nice functionality
+
+* Other thoughts
+  * "So nice"
+  * "Seems pretty robust"
+  * Likes to logo, maybe make a bit more use of the logo?
+  * "I can't break it"
+  * Lack of difference between home and browse is confusing.
+  * "Didn't realise could scroll left and right" - Dots to indicate that you can
+  * scroll left and right?
+
+### Malcolm: 30 year old man, describes himself as not a big "e-reader"
+
+* "Books shouldn't be expected to scroll down"
+* "Couldn't see the snackbar"
+
+
+### Aveline: young woman 20s, 'techy'
+* Attempted to scroll down as it felt more natural.
+
+* "Chapter links are jarring and old school "
+
+* "The alphabet genres are unclear, meaning she had to recount the alphabet to find title "
+
+* "Snack bar does not register "
+
+* "Library is kind of clear "
+
+
+### Jennifer: 20s described herself as 'analogue' not techy
+* "Laggy load for books"
+
+* "Scroll down feels more natural" 
+
+* "Check browse to find book"
+
+* "Good google fuzzy search"
+
+* "Library  apps view do that in general"
+
+
+### Nick: Young man, mid-20s, 'techy'
+
+* "Snackbar flashes too quickly and doesn’t give the user enough time to read the
+message"
+
+* "Bottom bar currently says Library rather than my library which is confusing"
+
+* "The section titles are a unclear as the a-z etc. aren’t clearly by
+authors or by title"
+
+* "Adding to the home screen is an opaque process"
+
+## Performance
 
 Lighthouse is Google's performance/feature audit for PWAs — we did well! 80/100.
 
 ![](https://files.gitter.im/fac10/ebook-app/QLPL/Screen-Shot-2017-05-11-at-22.53.58.png)
 
-### Future goals
+## Future goals
 
 We would like to create a Node backend that can server-render the React components, which means we can deliver static HTML/CSS to the browser on initial page load, then have React take over once the JS bundle finishes downloading. This would at least provide a minimal experience to users who don't receive our JS for some reason, and would speed up initial load/render.
+
 
 The backend would also handle authentication so we can persist the user's settings/books across devices, as currently this only exists in local storage.
