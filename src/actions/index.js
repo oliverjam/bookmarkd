@@ -18,11 +18,11 @@ export const fetchBook = async (url, id) => {
   //   .open('books-cache')
   //   .then(cache => cache.add(url).then(() => true));
   // console.log('I am working ', id, url);
-  // return {
-  //   type: CACHE_BOOK,
-  //   id,
-  //   payload: saved,
-  // };
+  return {
+    type: CACHE_BOOK,
+    id,
+    payload: saved,
+  };
 };
 
 export const addBook = ({ slug }) => ({
