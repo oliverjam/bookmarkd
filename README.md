@@ -46,9 +46,9 @@ A service worker is effectively a server that lives in the browser. It runs in t
 
 Our service worker initially caches all the static resources (`index.html`, `bundle.js`, favicons) and then waits to intercept any requests to our Amazon S3 bucket containing the ebooks. If it sees a request for a book go out it first checks if the book is in the cache and serves it from there if it is, otherwise it sends the request out to Amazon and then caches the book when the request comes back so that next time it will be available offline.
 
-Using sw-precache makes setting up the service worker quite doable as it generates the file automatically based on a config json file.
+Using sw-precache makes setting up the service worker quite doable as it generates the file automatically based on a config  file.
 
-```json
+```js
 {
 stripPrefix: 'build/',
   staticFileGlobs: [
