@@ -21,7 +21,7 @@ function makeBookArr(dir, filePath = './book-array.js') {
   bookArr.forEach(book => {
     const stream = fs.createReadStream(`${dir}/${book}`);
     stream.pipe(unzipper.Parse()).on('entry', function(entry) {
-      var fileName = entry.path;
+      const fileName = entry.path;
       if (fileName.endsWith('content.opf')) {
         let data = '';
         entry
