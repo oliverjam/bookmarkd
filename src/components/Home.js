@@ -1,7 +1,7 @@
 import React from 'react';
 import PageLayout from './PageLayout';
 import BookRows from './BookRows';
-import { Section, SectionTitle } from './base/Section';
+import { Section } from './base/Section';
 
 function Home() {
   return (
