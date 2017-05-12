@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { App } from './App';
+import SnackBar from './SnackBar';
 
-const wrapper = shallow(<App />);
+const wrapper = shallow(<SnackBar />);
 
-describe('App', () => {
+describe('SnackBar', () => {
   it('renders without crashing', () => {
-    // expect(2).toEqual(2);
+    // expect(2).toEqual(3);
     expect(typeof wrapper.props()).toBeTruthy;
   });
 });
