@@ -14,7 +14,7 @@ function Search({ value, handleChange }) {
       {/* <MenuButton>
         <IconMenu description="Open menu" width="24" height="24" />
       </MenuButton> */}
-      <SearchLabel for="search">
+      <SearchLabel htmlFor="search">
         Search for books
       </SearchLabel>
       <SearchInput
