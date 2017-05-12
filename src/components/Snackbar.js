@@ -7,7 +7,7 @@ const SnackBarContainer = styled.div`
   color: white;
   opacity: ${props => (props.message === '' ? '0' : '1')};
   transition: opacity 0.3s ease-in;
-  bottom: 2.5rem;
+  bottom: 0;
   height: auto;
   width: 100%;
   text-align: center;
