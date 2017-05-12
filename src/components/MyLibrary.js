@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PageLayout from './../components/PageLayout';
 import Book from './Book';
-import { RowItem, Row } from './base/Row';
+// import { RowItem, Row } from './base/Row';
+import { Grid, GridItem } from './base/Grid';
 import uuid from 'uuid/v4';
 
 class MyLibrary extends Component {
@@ -16,16 +17,16 @@ class MyLibrary extends Component {
       <PageLayout title="My Library">
         {!myBooks.length &&
           <h3>Any books you open will appear here for you to read later.</h3>}
-        <Row>
+        <Grid>
           {myBooks.length > 0 &&
             myBooks.map(book => {
               return (
-                <RowItem key={uuid()}>
+                <GridItem key={uuid()}>
                   <Book details={book} />
-                </RowItem>
+                </GridItem>
               );
             })}
-        </Row>
+        </Grid>
       </PageLayout>
     );
   }
