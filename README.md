@@ -1,5 +1,9 @@
 # Bookmarkd
 
+**This app was created as a student project for [Founders and Coders](https://foundersandcoders.com/) 4 years ago. The code has not been touched since, which means it is probably outdated/buggy/confusing, since it was written by 4 people who had barely learned React/Redux at the time**
+
+---
+
 Choose from over 101 free ebooks and read them online or offline.
 
 ![](https://cloud.githubusercontent.com/assets/9408641/25997875/371a362e-3716-11e7-919d-0d40671f46fb.jpg)
